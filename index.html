@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- NOTES: an entirely html, js version.
+1)dates for classes, instructor pages, weekly files & URLs
+and other addresses are either passed as parameters upon selecting
+a file or service; dates for propogated from an array.
+2) weekly notes are in .txt and named "week1.txt", etc.
+So when passing the week the script below concatenates "week" +
+parameter + ".txt".If you wanna change that it's easy enuf.
+
+-->
+<!-- EDIT THIS AREA FOR YOUR COURSE -->
+<!-- WEEK, e.g., 1 = Jan 7 [skip the year]-->
+<script>
+var courseTitle = "Python Portal  <span id='termName'>(Summer &lsquo;19)</span>";
+var datesOfWeek = ["May 7-11", "May 14-18", "May 21-25", "May 28-Jun 1","Jun 4-8", "Jun 11-15", "Jun 18-22", "Jun 25-29","Jul 2-6", "Jul 9-13", "Jul 16-20", "Jul 23-27", "Jul 20-Aug 3", "Aug 6-10"];
+var weeklyURLs = ["x","x","x","x","x","x","x","x","x"];
+var slackLink = "https://ucbischool.slack.com/messages/G4FAZ2DPA/";
+var chatURLs = ['slack','other'];
+var project1 = "project1.html";
+var project2 = "put googlesheet (boo) or other sheet/link info here.";
+var projectSignup = "put googlesheet (boo) or other sheet/link info here.";
+var exam1Date = "2019-06-25";	/* in form YYYY-MM-DD */
+var exam2Date = "2019-07-20";
+var newsURL = "news.txt";
+var instructorPages = ['instructors/paul.txt',
+'instructors/gunnar.txt',
+'instructors/chris.txt',
+'instructors/gb.txt',
+'instructors/rob.txt'];
+var tutorContact = "tutorContact.txt";
+</script>
+
+<title>W200 Python Portal</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bootstrap.min.css">
+<script src="jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<style>
+	body {
+		padding: 12;
+		padding-top: 20px;
+		font-family: Raleway, sans-serif;
+	}
+	.bars { color: silver; }
+	#termName {
+		font-size: 28px;
+		color: #1C386D;
+	}
+	#weeks { font-size:12px; }
+	#datestamp {
+		font-family: Raleway, "Helvetica-Neue", sans-serif;
+		font-size: 10px;
+		color: #1C386D;
+		/* text-align: right;
+		position: absolute;
+		left: 65%;*/
+	}
+	.smallInfo {
+		font-family: Raleway, "Helvetica-Neue", sans-serif;
+		font-size: 10px;
+		color: #1C386D;
+	}
+	.subinfo {
+		color: darkgray;
+	}
+	.centerDiv {
+		position: absolute;
+		top: 5%;
+		left: 5%;
+		right: 10%;
+		z-index: 2;
+		width: 90%;
+		height: auto; /* 200px; */
+		margin: 0 auto;
+		color: black;
+		font-size: 14px;
+		background-color: white;
+		border-left: 5px solid red;
+		padding-left: 20px;
+		padding-top: 10px;
+		padding-bottom: 15px;
+		display: none;
+	}
+	.centerDiv2 {
+		position: absolute;
+		top: 5%;
+		left: 5%;
+		right: 10%;
+		z-index: 2;
+		width: 90%;
+		height: 95%;
+		margin: 0 auto;
+		color: black;
+		font-size: 14px;
+		background-color: white;
+		border-left: 5px solid red;
+		padding-left: 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		display: none;
+	}
+	.weekNo { color: red;
+		font-weight: bold;
+	}
+	#closeBox {
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		z-index: 5;
+		/* display: none; */
+	}
+	#closeBox2 {
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		z-index: 6;
+		/* display: none; */
+	}
+	a { color: #1C386D; }
+	table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  text-align: left;
+  padding: 4px;
+  font-size: 9px;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+</head>
+
+<body>
+
+
+
+<div class="container">
+<div class="jumbotron">
+<img src="primarylogo2.png" width="30%"/>
+	<h1 id="courseTitle"></h1>
+
+	<p><a href="#instructors"><img src="avatarIcon.png" width="25px"/> Instructors</a> <span class="bars">|</span>
+
+	<a href="#chat"><img src="toolsIcon.png" width="25px"/> Online Tools</a> <span class="bars">|</span>
+
+	<a href="Summer_Syllabus_2019.pdf"><img src="syllabusIcon.png" width="25px"/> Syllabus (pdf)</a> <span class="bars">|</span>
+
+	<a href="#students"><img src="studentAvatar.png" width="25px"/> Students</a> <span class="bars">|</span>
+
+	<a href="https://github.prod.oc.2u.com/UCB-INFO-PYTHON" target="new"><img src="githubIcon.png" width="25px"/> GitHub</a> <span class="bars">|</span>
+
+	<a href="https://ucbischool.slack.com/messages/C5AL99BU6/" target="new"><img src="slackIconNew.png" width="25px"/>  Slack</a> <span class="bars">|</span>
+
+	<a href="#projects"><img src="projectsIcon.png" width="25px"/> Projects Showcase</a> <span class="bars">|</span>
+
+	<a href="#resources"><img src="resourcesIcon.png" width="25px"/> Resources</a> <span class="bars">|</span>
+
+	<a href="#exams"><img src="examIcon.png" width="25px"/> Exams</a> <span class="bars">|</span>
+
+	<a href=""><img src="calIcon.png" width="25px"/> ISVC</a>
+	</p>
+
+	<!--
+	<p id="weeks">Links to Weeks:
+		<a href="#week1"><strong>1</strong> <span id="week1"></span></a> |
+		<a href="#week2"><strong>2</strong> <span id="week2"></span></a> |
+		<a href="#week3"><strong>3</strong> <span id="week3"></span></a> |
+		<a href="#week4"><strong>4</strong> <span id="week4"></span></a> |
+		<a href="#week5"><strong>5</strong> <span id="week5"></span></a> |
+		<a href="#week6"><strong>6</strong> <span id="week6"></span></a> |
+		<a href="#week7"><strong>7</strong> <span id="week7"></span></a> |
+		<a href="#week8"><strong>8</strong> <span id="week8"></span></a> |
+		<a href="#week9"><strong>9</strong> <span id="week9"></span></a> |
+		<a href="#week10"><strong>10</strong> <span id="week10"></span></a> |
+		<a href="#week11"><strong>11</strong> <span id="week11"></span></a> |
+		<a href="#week12"><strong>12</strong> <span id="week12"></span></a> |
+		<a href="#week13"><strong>13</strong> <span id="week13"></span></a> |
+		<a href="#week14"><strong>14</strong> <span id="week14"></span></a>
+	</p>
+-->
+</div>
+
+<!-- start row -->
+<div class="row">
+	<div class="col-sm-4">
+	<h3 id="instructors"><img src="avatarIcon.png" width="25px"/> Instructors</h3>
+	<p>
+		<ul>
+		<!--
+		<li onclick="myFunction('i','0')">Paul Laskowski</li>
+		<li onclick="myFunction('i','1')">Gunnar Kleeman</li>
+		<li onclick="myFunction('i','2')">Chris Llop</li>
+		<li onclick="myFunction('i','4')">Gerry Beno&icirc;t</li>
+		<li onclick="myFunction('i','5')">Rob Foster (coordinator)</li>
+		-->
+		<li>Paul Laskowski <a href="mailto:paul@ischool.berkeley.edu"><span class="glyphicon glyphicon-envelope"></span></a> </li>
+		<li>Gunnar Kleeman <a href="mailto:gunnarkl@berkeley.edu"><span class="glyphicon glyphicon-envelope"></span></a></li>
+		<li>Christopher Llop <a href="mailto:christopher.llop@berkeley.edu"><span class="glyphicon glyphicon-envelope"></span></a></li>
+		<li>Gerry Beno&icirc;t <a href="mailto:gbenoit@berkeley.edu"><span class="glyphicon glyphicon-envelope"></span></a> </li>
+		<li>Rob Foster (coordinator) <a href="mailto:fosterrj@berkeley.edu"><span class="glyphicon glyphicon-envelope"></span></a> </li>
+		<li>Mark Barnett (tutor) <a href="mailto:markbarn@berkeley.edu"><span class="glyphicon glyphicon-envelope"></span> </a></li>
+<li>Andrew Walters (Reader, Sec 1 &amp; 2) <a href="mailto:andrewfwalters@berkeley.edu"> <span class="glyphicon glyphicon-envelope"></span></a> </li>
+<li>Jimmy Dunn (Reader, Sec 3 &amp; 4) <a href="mailto:jdunn@berkeley.edu"><span class="glyphicon glyphicon-envelope"></span></a> </li>
+		</ul>
+	</p>
+	</div>
+	<div class="col-sm-8">
+	<h3 id="chat"><img src="toolsIcon.png" width="25px"/> Online Tools</h3>
+
+	<table>
+		<tr>
+			<td><a href="​http://www.study.net" target="new"><img src="studyNetIcon.png" width="20px"/> Study Net</a>
+			<i>Study.net has some of the reading materials required for the course.</i></td>
+		</tr>
+
+		<tr><td><a href="​https://github.prod.oc.2u.com/UCB-INFO-PYTHON" target="new">GitHub
+			<img src="githubIcon.png" width="20px"/> GitHub, Git, &amp; Bash:​ ​https://github.com​; Class <i>Install and configure Git &amp; Bash</i></a></td></tr>
+		<tr><td><a href="https://anaconda.org/anaconda/python" target="new"><img src="anacondaIcon.png" width="20px"/> Anaconda with Jupyter Notebooks &amp; Python3</a>.  <a href="https://docs.python.org/3/" target="new">
+			<img src="pythonIcon.png" width="20px">Python 3 Docs</a></td></tr>
+		<tr><td><a href="​https://learn.datascience.berkeley.edu/" target="new"><img src="calIcon.png" width="25px"/> iSchool Virtual Campus (ISVC)</a></td></tr>
+		<tr><td><a href="​w200-python-2019-summer@googlegroups.com" target="new"><img src="groupIcon.png" width="20px"/> Student Google Group Email</a> <i>
+			Use Google Group Email to formally communicate with your instructors and classmates, ask questions, share problems and your successes (but don&rsquo;t share code).</i></td></tr>
+		<tr><td><a href="mids-python-instructors@googlegroups.com" target="new"><img src="groupEmailIcon.png" width="20px"/> Instructor group email</a></td></tr>
+		<tr><td><a href="https://ucbischool.slack.com/messages/C5AL99BU6/" target="new"><img src="slackIconNew.png" width="25px"/> Slack </a> <i>Use Slack to informally communicate with your classmates, ask questions, share problems and your successes (but don&rsquo;t share code).</i></td></tr>
+		<tr><td><a id='slackLink' href="slackLink" target="new">Slack Channel</a></td></tr>
+	</table>
+
+
+	</div>
+
+
+	<div class="col-sm-4">
+		<h3 id="students"><img src="studentAvatar.png" width="20px"/> Students</h3>
+		<p>Student Roster:</p>
+		<ol>
+			<li><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/949/roster" target="new">Mon, Sec 1</a></li>
+			<li><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/950/roster" target="new">Sec 2</a></li>
+			<li><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/951/roster" target="new">Sat, Sec 3</a></li>
+			<li><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/952/roster" target="new">Sat, Sec  4</li>
+		</ol>
+		<p><a href="projectSignups.html" target="new">Project Signups and URLs</a></p>
+		<p><a href="https://learn.datascience.berkeley.edu" target="new">ISVC</a></p>
+	</div>
+
+	<div class="col-sm-8">
+		<h3 id="students"><img src="weekly.png" width="20px"/> Calendar</h3>
+		<table width="100%" border="0" cellspacing="2" cellpadding="2">
+			<tr>
+				<th width="15%">Week</th>
+				<th width="30%">Readings</th>
+				<th width="30%">Homeworks</th>
+				<th width="25%">Other</th>
+
+			</tr>
+			<tr>
+				<td>May 7-11</td>
+				<td>Lubanovic, Chapter 1, Command Line Notes, Merge Conflict Resolution</td>
+				<td>On ISVC GitHub Link after the live session.</td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>May 14-18</td>
+				<td>Readings: Lubanovic, Ch 2 and beginning of 4 (upto 'cancel with break'); String formatting cookbook</td>
+				<td>Homework Unit 1 due: 11:59 before live session</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>May 21-25</td>
+				<td>Lucanovic, Ch  3</td>
+				<td>Unit 2: Due, 11:59</td>
+				<td>Makeup session for Monday section, tba</td>
+			</tr>
+			<tr>
+				<td>May 28-Jun 1</td>
+				<td>Lubanov, Ch 4</td>
+				<td>Unit 3: Due 11:59 pm</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Jun 4-8</td>
+				<td>Lubanovic, Ch 4 (functions)</td>
+				<td>Unit 4: Due 11:59 pm</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Jun 11-15</td>
+				<td>Goodrich et al. <i>Data structures</i></td>
+				<td>Unit 5: Due 11:59 pm</td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>Jun 18-22</td>
+				<td>Lubanovic, 6 (thru "method types")</td>
+				<td>Unit 6: Due 11:59 pm</td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>Jun 25-29</td>
+				<td>Lubanovic, Ch 6 and <a href="https://web.archive.org/web/20160222120543/" target="new">Link</a> and <a href="http://learnpythonthehar dway.org:80/book/ex43.html​" target="new">Link</a> </td>
+				<td>Project 1 proposal is due; HW 7 due, 11:59 pm</td>
+				<td>Exam 1 open window starts for week</td>
+
+			</tr>
+			<tr>
+				<td>Jul 2-6</td>
+				<td>Lubanovic, ch 7-8 (thru .json)</td>
+				<td>Exam 1 due before live session</td>
+				<td>Make-up for Monday section (tba)</td>
+
+			</tr>
+			<tr>
+				<td>Jul 9-13</td>
+				<td>None</td>
+				<td>Project 1 presentation</td>
+				<td>Submit code/materials 11:59 the day after</td>
+
+			</tr>
+			<tr>
+				<td>Jul 16-20</td>
+				<td>None</td>
+				<td>Project 2 is assigned</td>
+				<td>Unit 9 due</td>
+
+			</tr>
+			<tr>
+				<td>Jul 23-27</td>
+				<td>None</td>
+				<td>Project 2 proposal due; HW 10 due.</td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>Jul 30-Aug 3</td>
+				<td>McKinny, ch 10</td>
+				<td>Exam 2 open window starts</td>
+				<td>HW units 11, 12, and 13 due</td>
+
+			</tr>
+			<tr>
+				<td>Aug 6-10</td>
+				<td>Lubanovic, Ch 12</td>
+				<td>Project 2 presentation in live session; submit work by next day</td>
+				<td>Exam 2 due: 11:59 pm, Sunday Aug 11.</td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<a href="https://docs.google.com/spreadsheets/d/1G3HJ7tp0gPGU3Ido_kM1rjiwLOLQ2Bzm5H3t9daluyg/edit?usp=sharing" target="new">Visit link for latest updates, if any, to calendar dates</a>.
+				</td>
+		</table>
+
+
+	</div>
+</div> <!-- row -->
+
+<!-- start row -->
+<hr />
+Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
+<div class="row">
+	<div class="col-sm-4">
+	<!--
+	<h3 id="week1">Week <span class="weekNo">1</a></h3>
+	-->
+	<p id="weekDate1"><strong id="weekDate1"></strong></p>
+	<p class="btn btn-primary active">Intro to Programming, <br />Command Line, Source Code</button></span>
+	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/faa3a3a9-6e92-4612-9501-26f257cc6a73" target="new">Video Async</a></p>
+	<p>
+		<a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-1ZoomLink">Sec 1.</a>
+		<a href="" id="section2-1ZoomLink">Sec 2.</a>
+		<a href="" id="section3-1ZoomLink">Sec 3.</a>
+		<a href="" id="section4-1ZoomLink">Sec 4.</a>
+	</p>
+	<hr />
+</div>
+
+	<div class="col-sm-4">
+	<!--<h3 id="week2">Week <span class="weekNo">2</a></h3> -->
+	<p id="weekDate2"></p>
+	<p class="subinfo"><button type="button" class="btn btn-primary active">Starting out with Python</button></p>
+	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/6726edbd-0741-4b98-a851-17c6824c450d" target="new">Video Async</a></p>
+	<p>Homework 1: Due 11:59 pm Pacific Time - the day before your live session</p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-2ZoomLink">Sec 1.</a>
+		<a href="" id="section2-2ZoomLink">Sec 2.</a>
+		<a href="" id="section3-2ZoomLink">Sec 3.</a>
+		<a href="" id="section4-2ZoomLink">Sec 4.</a>
+	</p>
+	<hr />
+	</div>
+
+	<div class="col-sm-4">
+	<!-- <h3 id="week3">Week <span class="weekNo">3</a></h3> -->
+	<p id="weekDate3"><strong>TOPIC</strong></p>
+
+	<p class="subinfo"><button type="button" class="btn btn-primary active">Sequence Types &amp; Dictionaries</button></p>
+	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/7113dadd-7e28-49d1-bdc9-60d49e41035c" target="new">Video Async</a></p>
+	<p>Homework 2: Due 11:59 pm Pacific Time.</p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-3ZoomLink">Sec 1.</a>
+		<a href="" id="section2-3ZoomLink">Sec 2.</a>
+		<a href="" id="section3-3ZoomLink">Sec 3.</a>
+		<a href="" id="section4-3ZoomLink">Sec 4.</a>
+	</p>
+	<hr />
+	</div>
+</div> <!-- row -->
+
+<div class="row">
+	<div class="col-sm-4">
+	<!-- <h3 id="week4">Week <span class="weekNo">4</a></h3> -->
+	<p id="weekDate4"> <strong>TOPIC</strong></p>
+	<p class="subinfo"></p>
+	<p class="subinfo"><button type="button" class="btn btn-primary active">More about control &amp; algorithms.</button></p>
+	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/70487160-82f7-4d2f-ae1e-47162898df11" target="new">Video Async</a></p>
+	<p>Homework 3: Due 11:59 pm Pacific Time - the day before your live session.</p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-4ZoomLink">Sec 1.</a>
+		<a href="" id="section2-4ZoomLink">Sec 2.</a>
+		<a href="" id="section3-4ZoomLink">Sec 3.</a>
+		<a href="" id="section4-4ZoomLink">Sec 4.</a>
+	</p>
+	<hr />
+	</div>
+
+	<div class="col-sm-4">
+	<!-- <h3 id="weeks5">Week <span class="weekNo">5</a></h3> -->
+	<p id="weekDate5"></p>
+	<!-- <p class="subinfo">Functions.</p> -->
+	<p class="btn btn-primary active">Functions</p>
+	<p>Homework 4: Due 11:59 pm Pacific Time - the day before your live session.</p>
+	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/002f80de-e42a-4c3d-bc5a-a671420e4a05" target="new">Video Async</a></p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-5ZoomLink">Sec 1.</a>
+		<a href="" id="section2-5ZoomLink">Sec 2.</a>
+		<a href="" id="section3-5ZoomLink">Sec 3.</a>
+		<a href="" id="section4-5ZoomLink">Sec 4.</a>
+	</p>
+	<hr />
+	</div>
+
+	<div class="col-sm-4">
+	<!-- <h3 id="week6">Week <span class="weekNo">6</a></h3> -->
+	<p id="weekDate6"><strong>TOPIC</strong></p>
+
+
+	<p class="btn btn-primary active">Complexity</p>
+	<p>Homework 5: Due 11:59 pm Pacific Time - the day before your live session.</p>
+	<p>Start <strong>Project 1</strong> is assigned.</p>
+	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/ddaac103-e9c2-4081-9dfc-972aee3dfe83" target="new">Video Async</a></p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-6ZoomLink">Sec 1.</a>
+		<a href="" id="section2-6ZoomLink">Sec 2.</a>
+		<a href="" id="section3-6ZoomLink">Sec 3.</a>
+		<a href="" id="section4-6ZoomLink">Sec 4.</a>
+	</p>
+	<hr />
+
+	</div>
+</div> <!-- row -->
+
+<div class="row">
+	<div class="col-sm-4">
+	<!-- <h3 id="week7">Week <span class="weekNo">7</a></h3> -->
+	<p id="weekDate7"><strong>TOPIC</strong></p>
+
+	<p class="btn btn-primary active">Classes</p>
+	<p>Homework 6: Due 11:59 pm Pacific Time - the day before your live session.</p>
+	<a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/ddaac103-e9c2-4081-9dfc-972aee3dfe83" target="new">Video Async</a></p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-7ZoomLink">Sec 1.</a>
+		<a href="" id="section2-7ZoomLink">Sec 2.</a>
+		<a href="" id="section3-7ZoomLink">Sec 3.</a>
+		<a href="" id="section4-7ZoomLink">Sec 4.</a>
+	</p>
+<hr />
+	</div>
+	<div class="col-sm-4">
+	<!-- <h3 id="week8">Week <span class="weekNo">8</a></h3> -->
+	<p id="weekDate8"><strong>8 ?</strong></p>
+
+	<p class="btn btn-primary active">Object-Oriented Programming</p>
+	<p>Homework 7: Due 11:59 pm Pacific Time - the day before your live session.</p>
+	<p>Project 1 proposal - the day before your live session.</p>
+	<p>Exam 1 starts.  One week window once the link is active; a 24-hour window
+		to complete once you start.</p>
+	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/1e427928-8d3f-4d5b-a63c-eac267f911ef" target="new">Video Async</a></p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-8ZoomLink">Sec 1.</a>
+		<a href="" id="section2-8ZoomLink">Sec 2.</a>
+		<a href="" id="section3-8ZoomLink">Sec 3.</a>
+		<a href="" id="section4-8ZoomLink">Sec 4.</a>
+	</p>
+<hr />
+	</div>
+	<div class="col-sm-4">
+	<!-- <h3 id="week9">Week <span class="weekNo">9</a></h3> -->
+	<p id="weekDate9"><strong>TOPIC</strong></p>
+
+	<p class="btn btn-primary active">Working with text &amp; binary data</p>
+	<p>Exam 1 is due before your live session.</p>
+	<p>Monday section: make-up class to be scheduled.</p>
+	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/af502cf7-8af6-4efd-9977-1e7bdcce0ddc" target="new"></a></p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-9ZoomLink">Sec 1.</a>
+		<a href="" id="section2-9ZoomLink">Sec 2.</a>
+		<a href="" id="section3-9ZoomLink">Sec 3.</a>
+		<a href="" id="section4-9ZoomLink">Sec 4.</a>
+	</p>
+<hr />
+	</div>
+</div> <!-- row -->
+
+<div class="row">
+	<div class="col-sm-4">
+	<!-- <h3 id="week10">Week <span class="weekNo">10</a></h3> -->
+	<p id="weekDate10"><strong>NumPy</strong></p>
+
+	<p class="btn btn-primary active">NumPy</p>
+	<p>Present your project 1 in the live session.  Submit your code &amp;
+	presentation materials by 11:59 PDT the day <i>after</i> your live section.</p>
+	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/e3743519-5dd1-4af3-aebd-1848eb222af6" target="new">Video Async</a></p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-10ZoomLink">Sec 1.</a>
+		<a href="" id="section2-10ZoomLink">Sec 2.</a>
+		<a href="" id="section3-10ZoomLink">Sec 3.</a>
+		<a href="" id="section4-10ZoomLink">Sec 4.</a>
+	</p>
+<hr />
+	</div>
+
+	<div class="col-sm-4">
+	<!-- <h3 id="week11">Week <span class="weekNo">11</a></h3> -->
+	<p id="weekDate11"><strong>TOPIC</strong></p>
+
+	<p class="btn btn-primary active">Data Analysis with Pandas</p>
+	<p>Homework 9: Due 11:59 pm Pacific Time - the day before your live session.</p>
+	<p>Start:  Project 2 is assigned.</p>
+	<a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/706215dc-5855-4d43-a7cf-1788c493e0aa" target="new">Video Async</a></p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-11ZoomLink">Sec 1.</a>
+		<a href="" id="section2-11ZoomLink">Sec 2.</a>
+		<a href="" id="section3-11ZoomLink">Sec 3.</a>
+		<a href="" id="section4-11ZoomLink">Sec 4.</a>
+	</p>
+<hr />
+	</div>
+	<div class="col-sm-4">
+	<!--  <h3 id="week12">Week <span class="weekNo">12</a></h3> -->
+	<p id="weekDate12"><strong>TOPIC</strong></p>
+
+	<p class="btn btn-primary active">Plotting &amp; Visualization</p>
+	<p>Homework 10: Due 11:59 pm Pacific Time - the day before your live session.</p>
+	<p>Project 2 proposal is due  - the day before your live session.</p>
+	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/11818ba2-d004-4e68-a026-88bbe0926fcf" target="new">Video Async</a></p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-12ZoomLink">Sec 1.</a>
+		<a href="" id="section2-12ZoomLink">Sec 2.</a>
+		<a href="" id="section3-12ZoomLink">Sec 3.</a>
+		<a href="" id="section4-12ZoomLink">Sec 4.</a>
+	</p>
+<hr />
+	</div>
+</div> <!-- row -->
+
+<div class="row">
+	<div class="col-sm-4">
+	<!--  <h3 id="weeks13">Week <span class="weekNo">13</a></h3> -->
+	<p id="weekDate13"></p>
+	<p class="btn btn-primary active">Pandas Aggregation &amp; Group Operation</p>
+	<p>Exam 2 starts: distributed on ISVC; 24 hours to complete once you start.</p>
+	<p>Homeworks 11, 12, and 13 are due 11:59 pm  - the day before your live session.</p>
+	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/860716f6-02b3-4888-81c6-c28372149a97" target="new">Video Async</a></p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-13ZoomLink">Sec 1.</a>
+		<a href="" id="section2-13ZoomLink">Sec 2.</a>
+		<a href="" id="section3-13ZoomLink">Sec 3.</a>
+		<a href="" id="section4-13ZoomLink">Sec 4.</a>
+	</p>
+	<hr />
+	</div>
+
+	<div class="col-sm-4">
+	<!--  <h3 id="week14">Week <span class="weekNo">14</a></h3> -->
+	<p id="weekDate14"><strong>TOPIC</strong></p>
+
+	<p class="btn btn-primary active">Testing</p>
+	<p>Project 2 Presentation in your life session.</p>
+	<p>Project 2 Report is due - 11:59 PDT - the day <i>after</i> your life session.</p>
+	<p>Exam 2 is due  - 11:59 pm PDT, Sunday, Aug 11.</p>
+	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/b8256d3c-e6bb-456e-8d1d-10c2e3f7aa8b" target="new">Video Async</a></p>
+	<p><a href="">Live session slides.</a>
+		<br />
+		Zoom Links:
+		<a href="" id="section1-14ZoomLink">Sec 1.</a>
+		<a href="" id="section2-14ZoomLink">Sec 2.</a>
+		<a href="" id="section3-14ZoomLink">Sec 3.</a>
+		<a href="" id="section4-14ZoomLink">Sec 4.</a>
+	</p>
+<hr />
+	</div>
+
+	<div class="col-sm-4">
+	<h3 id="projects">Projects</h3>
+	<p class="subinfo"><a href="projectshowcase.html" target="new">Past Showcase (demos)</a></p>
+	<p><a href="../showcase/gunnarForm.html" target="new">Register your projects</a></p>
+	<p class="subinfo"><a href="project1.html" target="new">Project 1</a></p>
+	<p class="subinfo"><a href="project2.html" target="new">Project 2</a></p>
+
+	<hr />
+	</div>
+</div> <!-- row -->
+
+<div class="row">
+	<div class="col-sm-4">
+	<h3 id="exams"><img src="examIcon.png" width="25px"/> Exam Links</h3>
+	<p class="subinfo" id="exam1Date">Dates: Jun 25-29 (1 week window)</p>
+	<p class="subinfo" id="exam1"></p>
+	<p class="subinfo" id="exam2Date">Dates: Jul 20-Aug 3</p>
+	<p class="subinfo" id="exam2">Due before your next class</p>
+
+	<hr />
+	</div>
+ <div class="col-sm-4">
+	<h3 id="resources"><img src="resourcesIcon.png" width="25px"/> Resources, Updates</h3>
+	<p>
+	See <a href="​https://docs.google.com/spreadsheets/d/1G3HJ7tp0gPGU3Ido_kM1rjiwLOLQ2Bzm5H3t9daluyg/edit?usp=sharing" target="new"> this sheet</a> for latest updates, if any, to calendar dates.</p>
+	<p>Review Sheets: Python, NumPy, Pandas - review sheets.</p>
+	<p>Other resources [tba]</p>
+
+<hr />
+	</div>
+
+	<div class="col-sm-4">
+	<h3 id="projects">Tech Assessment Demo</h3>
+	<a href="http://people.ischool.berkeley.edu/~benoit/techassessment/ta-parse.php" target="new">Plot your skills</a>
+	<hr />
+	</div>
+</div> <!-- row -->
+
+<hr />
+<p class="smallInfo">2019 GB.
+Generated on <span id="datestamp"></span></p>
+</div> <!-- container -->
+
+
+<!-- iFrame version -->
+<iframe id="centerDiv2" name="centerDiv2" class="centerDiv2">
+This is a test of the data.
+</iframe>
+
+<script>
+/* array of URLs - fetch by number */
+function myFunction2(urlToFetch) {
+	var y = document.getElementById("closeBox2");
+	var x = document.getElementById("centerDiv2");
+	if (x.style.display === "none") {
+		x.src = urlToFetch;
+		x.style.display = "block";
+		y.style.display = "block";
+	} else {
+		x.style.display = "none";
+		y.style.display = "none";
+		this.parent.hideFrame();
+	}
+}
+function hideFrame() {
+	var fr = document.getElementById("centerDiv2");
+	fr.style.display = "none";
+}
+</script>
+
+<!-- end iFrame -->
+<div id="centerDiv" class="centerDiv"></div>
+<div id="closeBox"><img onclick="myFunction('x','0');" src="close-icon.png" width="50px" /></div>
+<div id="closeBox2"><img onclick="myFunction2('none');" src="close-icon.png" width="50px" />
+
+
+<script>
+// change dates and other area names.
+document.getElementById("courseTitle").innerHTML = courseTitle;
+
+var j;
+var w = "";
+var wd = "";
+var imgName = "";
+for (var i = 1; i < 15; i++) {
+	j = i-1;
+	w = "week"+i.toString();
+	wd = "weekDate"+i.toString();
+	imgName = "week"+i+"Icon.png";
+	/* document.getElementById(w).innerHTML = datesOfWeek[j]; */
+	document.getElementById(wd).innerHTML = "<img src='"+imgName+"' width='75px'/>"+datesOfWeek[j];
+}
+/*
+	document.getElementById("exam1Date").innerHTML = exam1Date;
+	document.getElementById("exam2Date").innerHTML = exam2Date;
+	document.getElementById("slackLink").src = slackLink;
+*/
+
+// EXAM 1
+var today = new Date();
+var userStart = exam1Date;
+var startymd = new Date(userStart);
+var endyear = today.getFullYear();
+var endday= today.getDate()+7;
+var endmon= today.getMonth();
+var endymd =new Date(endyear,endmon,endday);
+
+if ((today >= startymd) && (today <= endymd)) {
+	document.getElementById("exam1").innerHTML = "<span style='color:green;'>Exam 1 is OPEN</span>";
+} else {
+	document.getElementById("exam1").innerHTML = "Exam 1 is not yet open.";
+}
+
+// EXAM 2
+userStart = exam2Date;
+startymd = new Date(userStart);
+endyear = today.getFullYear();
+endday= today.getDate()+7;
+endmon= today.getMonth();
+endymd =new Date(endyear,endmon,endday);
+
+if ((today >= startymd) && (today <= endymd)) {
+	document.getElementById("exam2").innerHTML = "<span style='color:green;'>Exam 2 is OPEN</span>";
+} else {
+	document.getElementById("exam2").innerHTML = "Exam 2 is not yet open.";
+}
+
+function myFunction(group, no) {
+	var y = document.getElementById("closeBox");
+	var x = document.getElementById("centerDiv");
+	if (x.style.display === "none") {
+		if (group == 'i') { // instructors
+			msg = "Loading text for "+instructorPages[no];
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+		 		document.getElementById("centerDiv").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("GET", instructorPages[no], true);
+			xhttp.send();
+		}
+		x.innerHTML = msg + "<hr /><span onclick='myFunction(\'x\',\'0\')'>Close</span>";
+		x.style.display = "block";
+		y.style.display = "block";
+	} else {
+		x.style.display = "none";
+		y.style.display = "none";
+	}
+}
+
+	document.getElementById("datestamp").innerHTML = new Date();
+	var i = 1;
+	var zoomLink = "";
+	var link = "";
+	// ZOOM SECTION LINKS
+	var section1ZoomLinks = ["179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279","179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279"];
+	var section2ZoomLinks = ["179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279","179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279"];
+	var section3ZoomLinks = ["179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279","179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279"];
+	var section4ZoomLinks = ["179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279","179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279"];
+
+	var ln = ""; var d = "";
+
+	for (var i = 1; i < 5; i++) {
+		if (i == 1) {
+			for (j = 0; j < 14; j++) {
+				ln = "section"+i+"-"+(j+1)+"ZoomLink";
+				d = document.getElementById(ln);
+				// alert("1 "+i+" - ln "+ln);
+				d.innerHTML = "Sec #"+i+".";
+				d.href = "https://zoom.us/j/"+section1ZoomLinks[j];
+			}
+		}
+		if (i == 2) {
+			for (j = 0; j < 14; j++) {
+				ln = "section"+i+"-"+(j+1)+"ZoomLink";
+				// alert("2 "+i+" - ln "+ln);
+				d = document.getElementById(ln);
+				d.innerHTML = "Sec #"+i+".";
+				d.href = "https://zoom.us/j/"+section2ZoomLinks[j];
+			}
+		}
+		if (i == 3) {
+			for (j = 0; j < 14; j++) {
+				ln = "section"+i+"-"+(j+1)+"ZoomLink";
+				d = document.getElementById(ln);
+				d.innerHTML = "Sec #"+i+".";
+				d.href = "https://zoom.us/j/"+section3ZoomLinks[j];
+			}
+		}
+		if (i == 4) {
+			for (j = 0; j < 14; j++) {
+				ln = "section"+i+"-"+(j+1)+"ZoomLink";
+				d = document.getElementById(ln);
+				d.innerHTML = "Sec #"+i+".";
+				d.href = "https://zoom.us/j/"+section4ZoomLinks[j];
+			}
+		}
+	}
+
+</script>
+</body>
+</html>
