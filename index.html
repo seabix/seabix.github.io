@@ -3,34 +3,55 @@
 <head>
 
 <!-- NOTES: an entirely html, js version.
-1)dates for classes, instructor pages, weekly files & URLs
-and other addresses are either passed as parameters upon selecting
-a file or service; dates for propogated from an array.
-2) weekly notes are in .txt and named "week1.txt", etc.
-So when passing the week the script below concatenates "week" +
-parameter + ".txt".If you wanna change that it's easy enuf.
-******************************************************************
-****** INSTRUCTORS: NOTE!  SKIP DOWN TO LINE 792ff or SO FOR THE JAVASCRIPT ARRAY TO ADD/EDIT ZOOM ROOM IDS:
-e.g., look for your section [section1ZoomLinks]
-****** INSTRUCTORS: Notice the var datesOfWeek (line 20) - these are the weekly dates - edit for each term.
-****** INSTRUCTORS: LINKS FOR SLIDE SETS and PROJECTS WILL BE UPDATED ONCE I KNOW 'EM.
-****** LET ME KNOW IF THERE ARE TYPOS, ETCS.  Thanks. -GB  May 3, 2019, 5:45 pm EDT.
-******************************************************************
+1)dates for classes, instructor pages, weekly files & URLs and other addresses
+are either passed as parameters upon selecting a file or service; dates for
+propogated from an array.
+2) NOT USED THIS TERM IN W200 - skip
+weekly notes are in .txt and named "week1.txt", etc. So when passing the
+week the script below concatenates "week" + parameter + ".txt".
+If you wanna change that it's easy enuf.
+
 -->
 <!-- EDIT THIS AREA FOR YOUR COURSE -->
 <!-- WEEK, e.g., 1 = Jan 7 [skip the year]-->
 <script>
 var courseTitle = "Python Portal  <span id='termName'>(Summer &lsquo;19)</span>";
-var datesOfWeek = ["May 7-11", "May 14-18", "May 21-25", "May 28-Jun 1","Jun 4-8", "Jun 11-15", "Jun 18-22", "Jun 25-29","Jul 2-6", "Jul 9-13", "Jul 16-20", "Jul 23-27", "Jul 20-Aug 3", "Aug 6-10"];
-var weeklyURLs = ["x","x","x","x","x","x","x","x","x"];
-var slackLink = "https://ucbischool.slack.com/messages/G4FAZ2DPA/";
+
+/* ************* INSTRUCTORS: EDIT IN THIS REGION  ********************* */
+
+/* ************* EACH TERM EDIT ZOOM SECTION LINKS ********************* */
+// var section1ZoomLinks = ["179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279","179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279"];
+// var section2ZoomLinks = ["179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279","179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279"];
+// var section3ZoomLinks = ["179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279","179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279"];
+// var section4ZoomLinks = ["179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279","179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279"];
+
+/* ************** EACH TERM: CHANGE EXAM DATES - AUTO ACTIVATE LINK **** */
+// var exam1Date = "2019-06-25";	/* in form YYYY-MM-DD */
+// var exam2Date = "2019-07-20";
+
+/* ************* EACH TERM EDIT FOR WEEK DATES ************************* */
+// var datesOfWeek = ["May 7-11", "May 14-18", "May 21-25", "May 28-Jun 1","Jun 4-8", "Jun 11-15", "Jun 18-22", "Jun 25-29","Jul 2-6", "Jul 9-13", "Jul 16-20", "Jul 23-27", "Jul 20-Aug 3", "Aug 6-10"];
+
+/* ************* EACH TERM EDIT FOR WEEKLY SLIDE SETS ******************* */
+// var sessionsLinkBase = "https://github.com/UCB-INFO-PYTHON/assignments_upstream_summer19/tree/master/";
+// var sessionLinks = [
+// 	"week_01", "week_02", "week_03", "week_04", "week_05", "week_06", "week_07", "week_08", "week_09", "week_10", "week_11", "week_12", "week_13", "week_14"];
+
+/* ************* COMMUNICATION OPTIONS: SLACK ************************* */
+// var slackLink = "https://ucbischool.slack.com/messages/G4FAZ2DPA/";
+
+/* ************* COMMUNICATION OPTIONS: NOT USED ********************** */
 var chatURLs = ['slack','other'];
+
+/* ************* PROJECTS INFO : EDIT WITH CURRENT SIGNUP/DEMO SITES  * */
 var project1 = "project1.html";
 var project2 = "put googlesheet (boo) or other sheet/link info here.";
 var projectSignup = "put googlesheet (boo) or other sheet/link info here.";
-var exam1Date = "2019-06-25";	/* in form YYYY-MM-DD */
-var exam2Date = "2019-07-20";
+
+/* ************* OPTIONS - NOT USED FOR W200  ************************* */
+var weeklyURLs = ["x","x","x","x","x","x","x","x","x"];
 var newsURL = "news.txt";
+/* ************* OPTIONS - TAILORABLE PAGES FOR INSTRUCTORS - NOT USED  */
 var instructorPages = ['instructors/paul.txt',
 'instructors/gunnar.txt',
 'instructors/chris.txt',
@@ -42,132 +63,31 @@ var tutorContact = "tutorContact.txt";
 <title>W200 Python Portal</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="w200-config.js"></script>
 <link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="w200.js">
 <script src="jquery.min.js"></script>
 <script src="bootstrap.min.js"></script>
-<style>
-	body {
-		padding: 12;
-		padding-top: 20px;
-		font-family: Raleway, sans-serif;
-	}
-	.bars { color: silver; }
-	#termName {
-		font-size: 28px;
-		color: #1C386D;
-	}
-	#weeks { font-size:12px; }
-	#datestamp {
-		font-family: Raleway, "Helvetica-Neue", sans-serif;
-		font-size: 10px;
-		color: #1C386D;
-		/* text-align: right;
-		position: absolute;
-		left: 65%;*/
-	}
-	.smallInfo {
-		font-family: Raleway, "Helvetica-Neue", sans-serif;
-		font-size: 10px;
-		color: #1C386D;
-	}
-	.subinfo {
-		color: darkgray;
-	}
-	.centerDiv {
-		position: absolute;
-		top: 5%;
-		left: 5%;
-		right: 10%;
-		z-index: 2;
-		width: 90%;
-		height: auto; /* 200px; */
-		margin: 0 auto;
-		color: black;
-		font-size: 14px;
-		background-color: white;
-		border-left: 5px solid red;
-		padding-left: 20px;
-		padding-top: 10px;
-		padding-bottom: 15px;
-		display: none;
-	}
-	.centerDiv2 {
-		position: absolute;
-		top: 5%;
-		left: 5%;
-		right: 10%;
-		z-index: 2;
-		width: 90%;
-		height: 95%;
-		margin: 0 auto;
-		color: black;
-		font-size: 14px;
-		background-color: white;
-		border-left: 5px solid red;
-		padding-left: 20px;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		display: none;
-	}
-	.weekNo { color: red;
-		font-weight: bold;
-	}
-	#closeBox {
-		position: absolute;
-		top: 15px;
-		left: 15px;
-		z-index: 5;
-		/* display: none; */
-	}
-	#closeBox2 {
-		position: absolute;
-		top: 15px;
-		left: 15px;
-		z-index: 6;
-		/* display: none; */
-	}
-	a { color: #1C386D; }
-	table {
-  border-collapse: collapse;
-  width: 100%;
-}
-th, td {
-  text-align: left;
-  padding: 4px;
-  font-size: 9px;
-}
-tr:nth-child(even) {background-color: #f2f2f2;}
-</style>
 </head>
 
 <body>
 
 
-
 <div class="container">
 <div class="jumbotron">
-<img src="primarylogo2.png" width="30%"/>
+<img src="i/primarylogo2.png" width="30%"/>
 	<h1 id="courseTitle"></h1>
 
-	<p><a href="#instructors"><img src="avatarIcon.png" width="25px"/> Instructors</a> <span class="bars">|</span>
-
-	<a href="#chat"><img src="toolsIcon.png" width="25px"/> Online Tools</a> <span class="bars">|</span>
-
-	<a href="Summer_Syllabus_2019.pdf"><img src="syllabusIcon.png" width="25px"/> Syllabus (pdf)</a> <span class="bars">|</span>
-
-	<a href="#students"><img src="studentAvatar.png" width="25px"/> Students</a> <span class="bars">|</span>
-
-	<a href="https://github.prod.oc.2u.com/UCB-INFO-PYTHON" target="new"><img src="githubIcon.png" width="25px"/> GitHub</a> <span class="bars">|</span>
-
-	<a href="https://ucbischool.slack.com/messages/C5AL99BU6/" target="new"><img src="slackIconNew.png" width="25px"/>  Slack</a> <span class="bars">|</span>
-
-	<a href="#projects"><img src="projectsIcon.png" width="25px"/> Projects Showcase</a> <span class="bars">|</span>
-
-	<a href="#resources"><img src="resourcesIcon.png" width="25px"/> Resources</a> <span class="bars">|</span>
-
-	<a href="#exams"><img src="examIcon.png" width="25px"/> Exams</a> <span class="bars">|</span>
-
-	<a href="https://learn.datascience.berkeley.edu/login" target="new"><img src="calIcon.png" width="25px"/> ISVC</a>
+	<p><a href="#instructors"><img src="i/avatarIcon.png" width="25px"/> Instructors</a> <span class="bars">|</span>
+	<a href="#chat"><img src="i/toolsIcon.png" width="25px"/> Online Tools</a> <span class="bars">|</span>
+	<a href="Summer_Syllabus_2019.pdf"><img src="i/syllabusIcon.png" width="25px"/> Syllabus (pdf)</a> <span class="bars">|</span>
+	<a href="#students"><img src="i/studentAvatar.png" width="25px"/> Students</a> <span class="bars">|</span>
+	<a href="https://github.prod.oc.2u.com/UCB-INFO-PYTHON" target="new"><img src="i/githubIcon.png" width="25px"/> GitHub</a> <span class="bars">|</span>
+	<a href="https://ucbischool.slack.com/messages/C5AL99BU6/" target="new"><img src="i/slackIconNew.png" width="25px"/>  Slack</a> <span class="bars">|</span>
+	<a href="#projects"><img src="i/projectsIcon.png" width="25px"/> Projects Showcase</a> <span class="bars">|</span>
+	<a href="#resources"><img src="i/resourcesIcon.png" width="25px"/> Resources</a> <span class="bars">|</span>
+	<a href="#exams"><img src="i/examIcon.png" width="25px"/> Exams</a> <span class="bars">|</span>
+	<a href="https://learn.datascience.berkeley.edu/login" target="new"><img src="i/calIcon.png" width="25px"/> ISVC</a>
 	</p>
 
 	<!--
@@ -193,7 +113,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <!-- start row -->
 <div class="row">
 	<div class="col-sm-4">
-	<h3 id="instructors"><img src="avatarIcon.png" width="25px"/> Instructors</h3>
+	<h3 id="instructors"><img src="i/avatarIcon.png" width="25px"/> Instructors</h3>
 	<p>
 		<ul>
 		<!--
@@ -209,38 +129,38 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 		<li>Gerry Beno&icirc;t <a href="mailto:gbenoit@berkeley.edu"><span class="glyphicon glyphicon-envelope"></span></a> </li>
 		<li>Rob Foster (coordinator) <a href="mailto:fosterrj@berkeley.edu"><span class="glyphicon glyphicon-envelope"></span></a> </li>
 		<li>Mark Barnett (tutor) <a href="mailto:markbarn@berkeley.edu"><span class="glyphicon glyphicon-envelope"></span> </a></li>
-<li>Andrew Walters (Reader, Sec 1 &amp; 2) <a href="mailto:andrewfwalters@berkeley.edu"> <span class="glyphicon glyphicon-envelope"></span></a> </li>
-<li>Jimmy Dunn (Reader, Sec 3 &amp; 4) <a href="mailto:jdunn@berkeley.edu"><span class="glyphicon glyphicon-envelope"></span></a> </li>
+		<li>Andrew Walters (Reader, Sec 1 &amp; 2) <a href="mailto:andrewfwalters@berkeley.edu"> <span class="glyphicon glyphicon-envelope"></span></a> </li>
+		<li>Jimmy Dunn (Reader, Sec 3 &amp; 4) <a href="mailto:jdunn@berkeley.edu"><span class="glyphicon glyphicon-envelope"></span></a> </li>
 		</ul>
 	</p>
 	</div>
+
+
 	<div class="col-sm-8">
-	<h3 id="chat"><img src="toolsIcon.png" width="25px"/> Online Tools</h3>
+	<h3 id="chat"><img src="i/toolsIcon.png" width="25px"/> Online Tools</h3>
 
 	<table>
 		<tr>
-			<td><a href="​http://www.study.net" target="new"><img src="studyNetIcon.png" width="20px"/> Study Net</a>
+			<td><a href="​http://www.study.net" target="new"><img src="i/studyNetIcon.png" width="20px"/> Study Net</a>
 			<i>Study.net has some of the reading materials required for the course.</i></td>
 		</tr>
 
 		<tr><td><a href="​https://github.prod.oc.2u.com/UCB-INFO-PYTHON" target="new">GitHub
-			<img src="githubIcon.png" width="20px"/> GitHub, Git, &amp; Bash:​ ​https://github.com​; Class <i>Install and configure Git &amp; Bash</i></a></td></tr>
-		<tr><td><a href="https://anaconda.org/anaconda/python" target="new"><img src="anacondaIcon.png" width="20px"/> Anaconda with Jupyter Notebooks &amp; Python3</a>.  <a href="https://docs.python.org/3/" target="new">
-			<img src="pythonIcon.png" width="20px">Python 3 Docs</a></td></tr>
-		<tr><td><a href="​https://learn.datascience.berkeley.edu/" target="new"><img src="calIcon.png" width="25px"/> iSchool Virtual Campus (ISVC)</a></td></tr>
-		<tr><td><a href="​w200-python-2019-summer@googlegroups.com" target="new"><img src="groupIcon.png" width="20px"/> Student Google Group Email</a> <i>
+			<img src="i/githubIcon.png" width="20px"/> GitHub, Git, &amp; Bash:​ ​https://github.com​; Class <i>Install and configure Git &amp; Bash</i></a></td></tr>
+		<tr><td><a href="https://anaconda.org/anaconda/python" target="new"><img src="i/anacondaIcon.png" width="20px"/> Anaconda with Jupyter Notebooks &amp; Python3</a>.  <a href="https://docs.python.org/3/" target="new">
+			<img src="i/pythonIcon.png" width="20px">Python 3 Docs</a></td></tr>
+		<tr><td><a href="​https://learn.datascience.berkeley.edu/" target="new"><img src="i/calIcon.png" width="25px"/> iSchool Virtual Campus (ISVC)</a></td></tr>
+		<tr><td><a href="​w200-python-2019-summer@googlegroups.com" target="new"><img src="i/groupIcon.png" width="20px"/> Student Google Group Email</a> <i>
 			Use Google Group Email to formally communicate with your instructors and classmates, ask questions, share problems and your successes (but don&rsquo;t share code).</i></td></tr>
-		<tr><td><a href="mids-python-instructors@googlegroups.com" target="new"><img src="groupEmailIcon.png" width="20px"/> Instructor group email</a></td></tr>
-		<tr><td><a href="https://ucbischool.slack.com/messages/C5AL99BU6/" target="new"><img src="slackIconNew.png" width="25px"/> Slack </a> <i>Use Slack to informally communicate with your classmates, ask questions, share problems and your successes (but don&rsquo;t share code).</i></td></tr>
+		<tr><td><a href="mids-python-instructors@googlegroups.com" target="new"><img src="i/groupEmailIcon.png" width="20px"/> Instructor group email</a></td></tr>
+		<tr><td><a href="https://ucbischool.slack.com/messages/C5AL99BU6/" target="new"><img src="i/slackIconNew.png" width="25px"/> Slack </a> <i>Use Slack to informally communicate with your classmates, ask questions, share problems and your successes (but don&rsquo;t share code).</i></td></tr>
 		<tr><td><a id='slackLink' href="slackLink" target="new">Slack Channel</a></td></tr>
 	</table>
-
-
 	</div>
 
 
 	<div class="col-sm-4">
-		<h3 id="students"><img src="studentAvatar.png" width="20px"/> Students</h3>
+		<h3 id="students"><img src="i/studentAvatar.png" width="20px"/> Students</h3>
 		<p>Student Roster:</p>
 		<ol>
 			<li><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/949/roster" target="new">Mon, Sec 1</a></li>
@@ -253,7 +173,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	</div>
 
 	<div class="col-sm-8">
-		<h3 id="students"><img src="weekly.png" width="20px"/> Calendar</h3>
+		<h3 id="students"><img src="i/weekly.png" width="20px"/> Calendar</h3>
 		<table width="100%" border="0" cellspacing="2" cellpadding="2">
 			<tr>
 				<th width="15%">Week</th>
@@ -302,7 +222,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			</tr>
 			<tr>
 				<td>Jun 18-22</td>
-				<td>Lubanovic, 6 (thru "method types")</td>
+				<td>Lubanovic, 6 (thru &ldquo;method types&rdquo;)</td>
 				<td>Unit 6: Due 11:59 pm</td>
 				<td></td>
 
@@ -370,14 +290,11 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 <div class="row">
 	<div class="col-sm-4">
-	<!--
-	<h3 id="week1">Week <span class="weekNo">1</a></h3>
-	-->
 	<p id="weekDate1"><strong id="weekDate1"></strong></p>
 	<p class="btn btn-primary active">Intro to Programming, <br />Command Line, Source Code</button></span>
 	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/faa3a3a9-6e92-4612-9501-26f257cc6a73" target="new">Video Async</a></p>
 	<p>
-		<a href="">Live session slides.</a>
+		<a href="" target="new" id="session1">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-1ZoomLink">Sec 1.</a>
@@ -394,7 +311,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p class="subinfo"><button type="button" class="btn btn-primary active">Starting out with Python</button></p>
 	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/6726edbd-0741-4b98-a851-17c6824c450d" target="new">Video Async</a></p>
 	<p>Homework 1: Due 11:59 pm Pacific Time - the day before your live session</p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session2">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-2ZoomLink">Sec 1.</a>
@@ -412,7 +329,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p class="subinfo"><button type="button" class="btn btn-primary active">Sequence Types &amp; Dictionaries</button></p>
 	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/7113dadd-7e28-49d1-bdc9-60d49e41035c" target="new">Video Async</a></p>
 	<p>Homework 2: Due 11:59 pm Pacific Time.</p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session3">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-3ZoomLink">Sec 1.</a>
@@ -432,7 +349,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p class="subinfo"><button type="button" class="btn btn-primary active">More about control &amp; algorithms.</button></p>
 	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/70487160-82f7-4d2f-ae1e-47162898df11" target="new">Video Async</a></p>
 	<p>Homework 3: Due 11:59 pm Pacific Time - the day before your live session.</p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session4">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-4ZoomLink">Sec 1.</a>
@@ -450,7 +367,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p class="btn btn-primary active">Functions</p>
 	<p>Homework 4: Due 11:59 pm Pacific Time - the day before your live session.</p>
 	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/002f80de-e42a-4c3d-bc5a-a671420e4a05" target="new">Video Async</a></p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session5">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-5ZoomLink">Sec 1.</a>
@@ -470,7 +387,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p>Homework 5: Due 11:59 pm Pacific Time - the day before your live session.</p>
 	<p>Start <strong>Project 1</strong> is assigned.</p>
 	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/ddaac103-e9c2-4081-9dfc-972aee3dfe83" target="new">Video Async</a></p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session6">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-6ZoomLink">Sec 1.</a>
@@ -491,7 +408,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p class="btn btn-primary active">Classes</p>
 	<p>Homework 6: Due 11:59 pm Pacific Time - the day before your live session.</p>
 	<a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/ddaac103-e9c2-4081-9dfc-972aee3dfe83" target="new">Video Async</a></p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session7">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-7ZoomLink">Sec 1.</a>
@@ -511,7 +428,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p>Exam 1 starts.  One week window once the link is active; a 24-hour window
 		to complete once you start.</p>
 	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/1e427928-8d3f-4d5b-a63c-eac267f911ef" target="new">Video Async</a></p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session8">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-8ZoomLink">Sec 1.</a>
@@ -529,7 +446,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p>Exam 1 is due before your live session.</p>
 	<p>Monday section: make-up class to be scheduled.</p>
 	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/af502cf7-8af6-4efd-9977-1e7bdcce0ddc" target="new"></a></p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session9">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-9ZoomLink">Sec 1.</a>
@@ -550,7 +467,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p>Present your project 1 in the live session.  Submit your code &amp;
 	presentation materials by 11:59 PDT the day <i>after</i> your live section.</p>
 	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/e3743519-5dd1-4af3-aebd-1848eb222af6" target="new">Video Async</a></p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session10">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-10ZoomLink">Sec 1.</a>
@@ -569,7 +486,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p>Homework 9: Due 11:59 pm Pacific Time - the day before your live session.</p>
 	<p>Start:  Project 2 is assigned.</p>
 	<a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/706215dc-5855-4d43-a7cf-1788c493e0aa" target="new">Video Async</a></p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session11">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-11ZoomLink">Sec 1.</a>
@@ -587,7 +504,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p>Homework 10: Due 11:59 pm Pacific Time - the day before your live session.</p>
 	<p>Project 2 proposal is due  - the day before your live session.</p>
 	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/11818ba2-d004-4e68-a026-88bbe0926fcf" target="new">Video Async</a></p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session12">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-12ZoomLink">Sec 1.</a>
@@ -607,7 +524,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p>Exam 2 starts: distributed on ISVC; 24 hours to complete once you start.</p>
 	<p>Homeworks 11, 12, and 13 are due 11:59 pm  - the day before your live session.</p>
 	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/860716f6-02b3-4888-81c6-c28372149a97" target="new">Video Async</a></p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session13">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-13ZoomLink">Sec 1.</a>
@@ -627,7 +544,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<p>Project 2 Report is due - 11:59 PDT - the day <i>after</i> your life session.</p>
 	<p>Exam 2 is due  - 11:59 pm PDT, Sunday, Aug 11.</p>
 	<p><a href="https://learn.datascience.berkeley.edu/ap/courses/265/sections/d9da2b05-8a88-4ef5-a27d-ceb7c4238cee/coursework/courseModule/b8256d3c-e6bb-456e-8d1d-10c2e3f7aa8b" target="new">Video Async</a></p>
-	<p><a href="">Live session slides.</a>
+	<p><a href="" target="new" id="session14">Live session slides.</a>
 		<br />
 		Zoom Links:
 		<a href="" id="section1-14ZoomLink">Sec 1.</a>
@@ -651,7 +568,7 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 
 <div class="row">
 	<div class="col-sm-4">
-	<h3 id="exams"><img src="examIcon.png" width="25px"/> Exam Links</h3>
+	<h3 id="exams"><img src="i/examIcon.png" width="25px"/> Exam Links</h3>
 	<p class="subinfo" id="exam1Date">Dates: Jun 25-29 (1 week window)</p>
 	<p class="subinfo" id="exam1"></p>
 	<p class="subinfo" id="exam2Date">Dates: Jul 20-Aug 3</p>
@@ -660,9 +577,9 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 	<hr />
 	</div>
  <div class="col-sm-4">
-	<h3 id="resources"><img src="resourcesIcon.png" width="25px"/> Resources, Updates</h3>
+	<h3 id="resources"><img src="i/resourcesIcon.png" width="25px"/> Resources, Updates</h3>
 	<p>
-	See <a href="​https://docs.google.com/spreadsheets/d/1G3HJ7tp0gPGU3Ido_kM1rjiwLOLQ2Bzm5H3t9daluyg/edit?usp=sharing" target="new"> this sheet</a> for latest updates, if any, to calendar dates.</p>
+	See <a href="https://docs.google.com/spreadsheets/d/1G3HJ7tp0gPGU3Ido_kM1rjiwLOLQ2Bzm5H3t9daluyg/edit?usp=sharing" target="new"> this sheet</a> for latest updates, if any, to calendar dates.</p>
 	<p>Review Sheets: Python, NumPy, Pandas - review sheets.</p>
 	<p>Other resources [tba]</p>
 
@@ -677,8 +594,9 @@ Links to readings appear in the syllabus pdf; view Video Async videos via ISVC.
 </div> <!-- row -->
 
 <hr />
-<p class="smallInfo">2019 Send your notes/questions to <a href="mailto:gbenoit@berkeley.edu">Gerry Benoit</a>.
-Generated on <span id="datestamp"></span></p>
+<p class="smallInfo">2019 <a href="mailto:gbenoit@berkeley.edu">Contact GB</a>. [v1]
+Generated on <span id="datestamp"></span>.</p>
+<hr />
 </div> <!-- container -->
 
 
@@ -710,8 +628,8 @@ function hideFrame() {
 
 <!-- end iFrame -->
 <div id="centerDiv" class="centerDiv"></div>
-<div id="closeBox"><img onclick="myFunction('x','0');" src="close-icon.png" width="50px" /></div>
-<div id="closeBox2"><img onclick="myFunction2('none');" src="close-icon.png" width="50px" />
+<div id="closeBox"><img onclick="myFunction('x','0');" src="i/close-icon.png" width="50px" /></div>
+<div id="closeBox2"><img onclick="myFunction2('none');" src="i/close-icon.png" width="50px" />
 
 
 <script>
@@ -793,14 +711,17 @@ function myFunction(group, no) {
 	var i = 1;
 	var zoomLink = "";
 	var link = "";
-	// ZOOM SECTION LINKS
-	var section1ZoomLinks = ["179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279","179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279"];
-	var section2ZoomLinks = ["179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279","179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279"];
-	var section3ZoomLinks = ["179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279","179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279"];
-	var section4ZoomLinks = ["179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279","179123279", "179123279", "179123279", "179123279", "179123279", "179123279", "179123279"];
 
+	/* SESSION LINKS TO GIT HUB ARE UPDATE HERE ************** */
+	var ss = "";
+	for (var i = 0; i < 14; i++) {
+		ss = "session"+(i+1);
+		d = document.getElementById(ss);
+		d.href = sessionsLinkBase+sessionLinks[i];
+	}
+
+	/* ZOOM LINKS ARE UPDATED FROM THE ARRAY ABOVE *********** */
 	var ln = ""; var d = "";
-
 	for (var i = 1; i < 5; i++) {
 		if (i == 1) {
 			for (j = 0; j < 14; j++) {

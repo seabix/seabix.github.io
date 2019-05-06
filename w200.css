@@ -1,0 +1,91 @@
+	body {
+		padding: 12;
+		padding-top: 20px;
+		font-family: Raleway, sans-serif;
+	}
+	.bars { color: silver; }
+	#termName {
+		font-size: 28px;
+		color: #1C386D;
+	}
+	#weeks { font-size:12px; }
+	#datestamp {
+		font-family: Raleway, "Helvetica-Neue", sans-serif;
+		font-size: 10px;
+		color: #1C386D;
+		/* text-align: right;
+		position: absolute;
+		left: 65%;*/
+	}
+	.smallInfo {
+		font-family: Raleway, "Helvetica-Neue", sans-serif;
+		font-size: 10px;
+		color: #1C386D;
+	}
+	.subinfo {
+		color: darkgray;
+	}
+	.centerDiv {
+		position: absolute;
+		top: 5%;
+		left: 5%;
+		right: 10%;
+		z-index: 2;
+		width: 90%;
+		height: auto; /* 200px; */
+		margin: 0 auto;
+		color: black;
+		font-size: 14px;
+		background-color: white;
+		border-left: 5px solid red;
+		padding-left: 20px;
+		padding-top: 10px;
+		padding-bottom: 15px;
+		display: none;
+	}
+	.centerDiv2 {
+		position: absolute;
+		top: 5%;
+		left: 5%;
+		right: 10%;
+		z-index: 2;
+		width: 90%;
+		height: 95%;
+		margin: 0 auto;
+		color: black;
+		font-size: 14px;
+		background-color: white;
+		border-left: 5px solid red;
+		padding-left: 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		display: none;
+	}
+	.weekNo { color: red;
+		font-weight: bold;
+	}
+	#closeBox {
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		z-index: 5;
+		/* display: none; */
+	}
+	#closeBox2 {
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		z-index: 6;
+		/* display: none; */
+	}
+	a { color: #1C386D; }
+	table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  text-align: left;
+  padding: 4px;
+  font-size: 9px;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
