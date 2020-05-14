@@ -1,0 +1,26 @@
+Hey Paul and Gerry,
+
+I changed the pandas question to look at a bigger data and do some aggregations. Here is the verbiage (also added to the google doc):
+
+Download this data file to answer the question:
+https://drive.google.com/a/berkeley.edu/file/d/1W9jlWSO3KyyBn2oV7WlfcNwCODD_LgfK/view?usp=sharing
+
+This file contains 2019 oil & gas production values. The file is taken directly from the source with some small modifications - the data is **not** cleaned! The data dictionary/schema for this file is here: https://docs.google.com/spreadsheets/d/1q--1GyPru98oXybpyR6w5lhuens9KetcI1Fef5fS9lM/edit?usp=sharing
+Using the above data file and the pandas library answer the following questions:
+
+- In 2019, which month had the most oil production? (Answer as a single integer: like 1 instead of 'January')
+- In 2019, what operator number had the most total gas production? (Answer as a single integer: the operator number)
+- In 2019, what was the total gas flared? (Answer as a single integer: the total gas flared rounded up to the nearest whole number)
+- In 2019, what was the average gas production per day? (Answer as a single integer: the average gas production rounded up to the nearest whole number)
+- In 2019, what county had the most oil & gas wells operating? (Answer as a single integer: the API county code)
+
+Question Objectives:
+- reading in the file / understanding the data dictionary
+- date formatting: month/year combined into a string that will require conversion to a datetime
+- filtering: as the file also include 'update' records for other years that need filtered out
+- groupby / aggs to directly answer the questions
+
+What do you think?
+
+Cheers,
+Rob

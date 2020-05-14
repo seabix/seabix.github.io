@@ -1,0 +1,42 @@
+<style>
+.activequestion { border-radius: 3px;
+	padding: 4px;
+	background-color: rgba(204,51,0, 0.3);
+	color: navyblue;
+}
+.notyet { color: silver; }
+</style>
+
+<h2>Data Analysis with pandas &#x1f43c;</h2>
+<p>
+The below file contains 2019 oil & gas production values.  
+The file is taken directly from the source with some small 
+modifications - the data are <u>not cleaned</u>! Download this 
+data file to your own computer and prepare for your question: 
+<a href="https://drive.google.com/a/berkeley.edu/file/d/1W9jlWSO3KyyBn2oV7WlfcNwCODD_LgfK/view?usp=sharing" target="new">
+data file</a>.
+The data dictionary/schema for this 
+<a href="https://docs.google.com/spreadsheets/d/1q--1GyPru98oXybpyR6w5lhuens9KetcI1Fef5fS9lM/edit?usp=sharing" target="new">
+file is here</a>.
+<blockquote class="activequestion">Please take your time to familiarize yourself 
+with the files, the data, and think about the answers.  Your submission will be 
+executed and the output compared to our output answer. &#128077;&#127996;</blockquote>
+</p>
+<hr />
+<h3>Pandas Questions</h3>
+<p>There will be a sequence of 5 questions.  Be sure to import the pandas library in your submission!</p>
+<p>Using the above data file and the pandas library answer the following questions:
+<ol>
+<li>In 2019, which month had the most oil production? (Answer as a single integer, that is, 1 instead of 'January') [10]</li>
+<li>In 2019, what operator number had the most total gas production? (Answer as a single integer: the operator number) [11]</li>
+<li>In 2019, what was the total gas flared? (Answer as a single integer: the total gas flared rounded up to the nearest whole number) [12]</li>
+<li>In 2019, what was the average gas production per day? (Answer as a single integer: the average gas production rounded up to the nearest whole number) [13]</li>
+<li>In 2019, what county had the most oil & gas wells operating? (Answer as a single integer: the API county code) [14]</li>
+</ol>
+</p>
+<p>
+	Pandas question 1 of 5:
+	<blockquote class="activequestion">
+	In 2019, which month had the most oil production? (Answer as a single integer, that is, 1 instead of 'January') [10]
+	</blockquote>
+</p>

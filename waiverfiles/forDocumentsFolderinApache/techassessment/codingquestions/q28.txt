@@ -1,0 +1,15 @@
+<div class="tab">
+<p class="area">Python Language and Syntax</p><p>
+Given the code: <br />
+<code>x = input("Enter your options from A, B, or C:")<br />
+assert x in ("A”,”B”,”C") </code>
+<br />
+
+What is the best way to improve it?
+<ol type="a">
+<li><input type='radio' name='q28' id='q28' value='a'> Wrap the code in a try-except block so the program execution can continue</li>
+<li><input type='radio' name='q28' id='q28' value='b'> Delete the assert statement so the program doesn’t abruptly halt.</li>
+<li><input type='radio' name='q28' id='q28' value='c'> Instead of the assert, raise an exception with an informative note for the end user to see</li>
+<li><input type='radio' name='q28' id='q28' value='d'> Replace the assert with a loop so the user is repeatedly asked for an option until they enter a valid input.</li>
+</ol>
+</p></div>

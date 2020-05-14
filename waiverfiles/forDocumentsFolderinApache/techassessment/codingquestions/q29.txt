@@ -1,0 +1,16 @@
+<div class="tab">
+<p class="area">Python Language and Syntax</p><p>
+Which option is true about this code sample (line numbers <span style="color:silver">ln1, ln2, ln3</span> just for reference):<br />
+<code>
+<span style="color:silver">ln1</span> class menuPrompt(): <br />
+<span style="color:silver">ln2</span> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self): <br />
+<span style="color:silver">ln3</span> &nbsp;&nbsp;&nbsp;&nbsp;"""Sets up the API Keys and intro prints"""
+</code>
+<ol type="a">
+<li><input type='radio' name='q29' id='q29' value='a'> Line 3 is a docstring</li>
+<li><input type='radio' name='q29' id='q29' value='b'> Line 2 is an incorrectly formed constructor</li>
+<li><input type='radio' name='q29' id='q29' value='c'> Line 1 is an incorrectly coded class definition</li>
+<li><input type='radio' name='q29' id='q29' value='d'> Line 1 is an incorrect because there are no parameters</li>
+<li><input type='radio' name='q29' id='q29' value='e'> Line 3 is an incorrect the comments are either not indented correctly or missing the hashtag
+</li></ol>
+</p></div>

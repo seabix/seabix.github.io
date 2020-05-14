@@ -1,0 +1,14 @@
+<div class="tab">
+<p class="area">Object Oriented Programming</p>
+<p>
+What is a sensible task to place in an <code>__init__()</code> method for a class representing 
+a calendar event?
+<ol type="a">
+<li><input type='radio' name='q7' id='q7' value='a'> Populate a dictionary to efficiently map between different time zones.</li>
+<li><input type='radio' name='q7' id='q7' value='b'> Build a hashmap for quick lookup of events given a calendar day.</li>
+<li><input type='radio' name='q7' id='q7' value='c'> Construct a list to represent a set of invited guests.</li>
+<li><input type='radio' name='q7' id='q7' value='d'> Send an email to the calendar owner.</li>
+<li><input type='radio' name='q7' id='q7' value='e'> Call the constructor for the calendar that this event belongs to.</li>
+</ol>
+</p>
+</div>

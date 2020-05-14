@@ -1,0 +1,24 @@
+<div class="tab">
+	Write a little script to accept 2 integers and print their sum.
+	<input type="hidden" value="1" name="opt" />
+	<textarea id="opt1" name='democode' rows='10' cols='50'></textarea>
+</div>
+
+<div class="tab">
+	Write a little script to accept 2 integers and print their sum.
+	<input type="hidden" value="2" name="opt" />
+	<textarea id="opt2" name='democode' rows='10' cols='50'></textarea>
+</div>
+
+<div class="tab">
+	Write a little script to accept 2 integers and print their sum.
+	<input type="hidden" value="3" name="opt" />
+	<textarea id="opt3" name='democode' rows='10' cols='50'></textarea>
+</div>
+
+
+<div class="tab">
+	Write a little script to accept 2 integers and print their sum.
+	<input type="hidden" value="4" name="opt" />
+	<textarea id="opt4" name='democode' rows='10' cols='50'></textarea>
+</div>

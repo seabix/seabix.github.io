@@ -1,0 +1,4 @@
+Write a class (named <code>Dice</code>) that does the following:
+<ol><li>Initialize a die with values between two specified parameters</li>
+<li>Has a method called roll that returns a random value between the 2 specified numbers</li>
+<li>Has another method called check that takes a number as a parameter and calls the roll method and sees if your roll is above the specified check number</li></ol>

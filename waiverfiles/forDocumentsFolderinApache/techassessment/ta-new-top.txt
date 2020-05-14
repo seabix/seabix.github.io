@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html><head><title>Self-Assessment - long version</title>
+<style>
+	body { padding: 12%;
+		font-family: Raleway, "Avenir Next", "Open Sans", OpenSans, sans-serif;
+		font-size: 14px;
+	}
+	#countDown {
+	background-color: rgba(50, 115, 220, 0.3);
+	padding: 10px;
+	border-radius: 4px;
+	color: white;
+	width: 40px;
+  text-align: center;
+  font-family: "Avenir Next", sans-serif;
+  font-size: 12px;
+}
+	#footer {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: cornflowerblue;
+		color: black;
+		text-align: center;
+		font-size: 9px;
+		height: 50px;
+	}
+	.center {
+  		margin: auto;
+  		width: 100%;
+	}			
+	code { background-color: rgba(128,128,128,0.1); 
+		color: maroon;
+		border-radius: 3px;
+		padding-left: 4px;
+		padding-right: 4px;
+		padding-top: 2px;
+		padding-bottom: 2px; 
+		line-height: 20px;
+	 }
+	.codedemo { 
+		background-color: rgba(128,128,128,0.1); 
+		color: maroon;
+		border-radius: 7px;
+		padding: 5px;
+		display:block;
+		margin-left: 20px;
+		font-family: "Lucida Console", Monaco, monospace;
+		font-size: 14px;
+	}
+	blockquote { font-size: 15px; }
+	.item {
+		font-size: 10px; 
+		display: flex; 
+	}
+	.topicArea { color: cornflowerblue;
+		font-size: 9px;
+	}
+	
+</style>
+
+<script>
+	function preventBack() { 
+    	window.history.forward();  
+    } 
+    setTimeout("preventBack()", 0); 
+	window.onunload = function () { null }; 
+
+	/* show/hide button  */
+	function showHide(theID) {
+		var x = document.getElementById(theID);
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	/* the loadDoc can be changed from GET to POST */
+	function loadDoc(number) {
+		num = number.toString();
+		var fileToGet = "codingquestions/q" + num + ".txt";
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				document.getElementById("theQuestionToAsk").innerHTML = this.responseText;
+				this.responseText;
+  			}
+		};
+		xhttp.open("GET", fileToGet, true);
+		xhttp.send();
+	}
+	
+	<!--
+// this function will setup a virtual anchor element
+// and fire click handler to open new URL in the same room
+// it works better than location.href=something or location.reload() -->
+function openNewURLInTheSameWindow(targetURL) {
+    var a = document.createElement("a");
+    a.href = targetURL;
+    fireClickEvent(a);
+}
+</script>
+</head>
+
+<body>
+<img src="images/berkeley-i-school.png" width="150px" >
+<!-- end of ta-new-top.txt --> 
+

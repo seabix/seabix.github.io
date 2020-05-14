@@ -1,0 +1,13 @@
+<div class="tab">
+<p class="area">Python Language and Syntax</p><p>
+What kind of container is most appropriate for storing a set of employees 
+along with a set of attributes (phone number, address, etc.) for each one, 
+if the number of employees may change and it is important to very quickly 
+display a list in alphabetical order?
+<ol type="a">
+<li><input type='radio' name='q19' id='q19' value='a'> Dictionary containing lists</li>
+<li><input type='radio' name='q19' id='q19' value='b'> List containing dictionaries</li>
+<li><input type='radio' name='q19' id='q19' value='c'> Dictionary containing dictionaries</li>
+<li><input type='radio' name='q19' id='q19' value='d'> Set containing lists</li>
+<li><input type='radio' name='q19' id='q19' value='e'> Tuple containing lists</li></ol>
+</p></div>

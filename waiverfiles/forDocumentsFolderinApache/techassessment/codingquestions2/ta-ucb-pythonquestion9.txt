@@ -1,0 +1,38 @@
+<style>
+.activequestion { border-radius: 3px;
+	padding: 4px;
+	background-color: rgba(204,51,0, 0.3);
+	color: navyblue;
+}
+.notyet { color: silver; }
+</style>
+<p>
+Copy/paste the below cell & information. The question will be all fill in the blank. Question a) has 3 answers. Also provide a section for them to input their code.
+</p>
+<p>
+For this question use the code below to make an array named ar. Using this array please write-in the answer to each of these questions:
+
+<code>import numpy as np<br />
+np.random.seed(25)<br />
+ar = np.random.randn(1000)<br />
+ar = ar * 100<br />
+ar = ar.astype('int8')<br />
+ar = ar.reshape((200, 5))</code>
+</p>
+
+<p>
+This is a sequence of questions:
+<ol>
+	<li>Using numpy, find the max value, min value and mean of the array <code>ar</code>.</li>
+	<li>Using numpy, what is the number at the position of the 8th row and 2nd column of the array <code>ar</code>.</li>
+	<li>Using numpy, how many numbers in the array <code>ar</code> are above the mean.</li>
+	<li>Using numpy, what is the sum of the values of the array <code>ar</code> that are greater than -5 above and less than or equal to 20.</li>
+	<li>Using numpy, what is the position of the max value of the array <code>ar</code>. Give the answer as a tuple like: (10,3)</li>
+</ol>
+</p>
+<p>
+	Numpy question 5 of 5:
+	<blockquote class="activequestion">
+	Using numpy, what is the position of the max value of the array <code>ar</code>. Give the answer as a tuple like: (10,3)
+	</blockquote>
+</p>

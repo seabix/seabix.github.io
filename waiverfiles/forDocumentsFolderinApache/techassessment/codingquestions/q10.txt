@@ -1,0 +1,14 @@
+<div class="tab">
+<p class="area">Command line and General Computing</p><p>
+
+What error can result from decoding text that was encoded using ASCII using UTF-8?
+<ol type="a">
+<li><input type='radio' name='q10' id='q10' value='a'> Characters not represented in UTF-8 will raise an exception.</li>
+<li><input type='radio' name='q10' id='q10' value='b'> Characters that span multiple bytes may be misinterpreted as multiple characters.</li>
+<li><input type='radio' name='q10' id='q10' value='c'> Multiple characters may be misinterpreted as a single character spanning multiple bytes.</li>
+<li><input type='radio' name='q10' id='q10' value='d'> a and b</li>
+<li><input type='radio' name='q10' id='q10' value='e'> b and c</li>
+<li><input type='radio' name='q10' id='q10' value='f'> a and c</li>
+<li><input type='radio' name='q10' id='q10' value='g'> All of the above</li>
+<li><input type='radio' name='q10' id='q10' value='h'> None of the above</li>
+</ol></p></div>

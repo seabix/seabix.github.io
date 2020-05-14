@@ -1,0 +1,41 @@
+<div class="tab">
+<p class="area">Python Language and Syntax</p><p>
+In this question, we enter a single word and then enter another word. 
+We want to find letters that are in common. The psuedo-code is given as these steps:<br />
+<code>
+&nbsp;&nbsp;&nbsp;&nbsp;# 1) Get 2 words<br />
+&nbsp;&nbsp;&nbsp;&nbsp;# 2) go letter by letter through the first word<br />
+&nbsp;&nbsp;&nbsp;&nbsp;# 3) check that the letter is in the second word<br />
+&nbsp;&nbsp;&nbsp;&nbsp;# 4) if so save it<br />
+&nbsp;&nbsp;&nbsp;&nbsp;# 5) sort that list and print it out<br />
+</code>
+<br />
+What code would you add to the # add code here # block to make the pseudo-code work?<br />
+<br />
+<code>
+word1 = input("Enter one word: ").lower()<br />
+word2 = input("Enter another word: ").lower()<br />
+same_list = []<br />
+<br />
+#Add your code here#<br />
+<br />
+same_set = "".join(sorted(set(same_list)))<br />
+print("Letters in common:", same_set)</code><br />
+<br />
+<ol type="a">
+<li><input type='radio' name='q32' id='q32' value='a'> <code>
+for ltr in word1:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if ltr in word2:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;same_list.append(ltr)
+</code></li>
+
+<li><input type='radio' name='q32' id='q32' value='b'> <code>
+for (ltr in word1):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;while ltr not in word2:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;same_list.append(ltr)<br />
+</code></li>
+<li><input type='radio' name='q32' id='q32' value='c'> <code>
+if ltr in word1 and if ltr in word2:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;append.same_list(ltr)</code>
+</li></ol>
+</p></div>

@@ -1,0 +1,1 @@
+Write a <code>lambda</code> function that takes the input of the list below and only returns the numbers that are divisible by 8. <code>test_list = [2,8,17,32,66,128,256,532]</code>

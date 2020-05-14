@@ -1,0 +1,14 @@
+<div class="tab">
+<p class="area">Python Language and Syntax</p><p>
+You have a very large list containing employee names and their phone numbers, 
+which has been sorted alphabetically by name (and you have no auxiliary data structures).  
+Which of the following algorithms is a valid way to locate the entry for a given name 
+with the fastest big-O runtime?<br />
+<ol type="a">
+<li><input type='radio' name='q33' id='q33' value='a'> Brute-force search</li>
+<li><input type='radio' name='q33' id='q33' value='b'> Bisection search</li>
+<li><input type='radio' name='q33' id='q33' value='c'> Newton’s method</li>
+<li><input type='radio' name='q33' id='q33' value='d'> Gradient descent</li>
+<li><input type='radio' name='q33' id='q33' value='e'> Merge sort</li>
+</ol>
+</div>

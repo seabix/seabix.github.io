@@ -1,0 +1,12 @@
+<div class="tab">
+<p class="area">Python Language and Syntax</p><p>
+What does <code>pickle</code> do?
+
+<ol type="a">
+<li><input type='radio' name='q23' id='q23' value='a'> serialization, meaning saving a program's state data to disk so that it can carry 
+	on where it left off when restarted (persistence); and send data over TCP, and convert arbitrary python objects to string</li>
+<li><input type='radio' name='q23' id='q23' value='b'> serialization, meaning saving a program's source code to disk so that it can carry on where it left off when restarted (persistence); and send data over TCP, and convert arbitrary python objects to string</li>
+<li><input type='radio' name='q23' id='q23' value='c'> objectification, meaning converting a program's functions to objects so that they can be shared in a library (encapsulation)</li>
+<li><input type='radio' name='q23' id='q23' value='d'> objectification, meaning converting a program's functions to objects so that they can be saved to disk and shared
+</li></ol>
+</p></div>

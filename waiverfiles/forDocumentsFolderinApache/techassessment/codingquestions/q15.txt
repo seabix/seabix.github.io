@@ -1,0 +1,19 @@
+<div class="tab">
+<p class="area">Algorithm Analysis</p><p>
+What is the Big-O runtime for this snippet?  You may assume that all simple 
+statements (e.g. constructors, arithmetic operators) take constant time.
+<br /><br />
+<code>
+j = 1<br />
+for i in range(n):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;while 2**j < i:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j += 1<br />
+</code>
+<ol type="a">
+<li><input type='radio' name='q15' id='q15' value='a'> O(1)</li>
+<li><input type='radio' name='q15' id='q15' value='b'> O(N)</li>
+<li><input type='radio' name='q15' id='q15' value='c'> O(N^2)</li>
+<li><input type='radio' name='q15' id='q15' value='d'> O(log n)</li>
+<li><input type='radio' name='q15' id='q15' value='e'> O(n log n)
+</li></ol>
+</p></div>

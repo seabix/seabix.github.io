@@ -1,0 +1,14 @@
+<div class="tab">
+<p class="area">Data Analysis</p><p>
+Which of the following are libraries commonly used in <u>python</u> scripts for visualizing 
+or graphing data?
+<ol type="a">
+<li><input type='radio' name='q9' id='q9' value='a'> d3</li>
+<li><input type='radio' name='q9' id='q9' value='b'> Matplotlib</li>
+<li><input type='radio' name='q9' id='q9' value='c'> Seaborn</li>
+<li><input type='radio' name='q9' id='q9' value='d'> a and b</li>
+<li><input type='radio' name='q9' id='q9' value='e'> b and c</li>
+<li><input type='radio' name='q9' id='q9' value='f'> a and c</li>
+<li><input type='radio' name='q9' id='q9' value='g'> All of the above</li>
+<li><input type='radio' name='q9' id='q9' value='h'> None of the above</li>
+</ol></p></div>

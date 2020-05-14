@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html><head><title>Self-Assessment - long version</title>
+<style>
+	body { padding: 12%;
+		font-family: Raleway, "Avenir Next", "Open Sans", OpenSans, sans-serif;
+		font-size: 14px;
+	}
+	#footer {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: cornflowerblue;
+		color: black;
+		text-align: center;
+		font-size: 9px;
+		height: 50px;
+	}
+	code { background-color: rgba(128,128,128,0.1); 
+		color: maroon;
+		border-radius: 3px;
+		padding-left: 4px;
+		padding-right: 4px;
+		padding-top: 2px;
+		padding-bottom: 2px; 
+		line-height: 20px;
+	 }
+	.codedemo { 
+		background-color: rgba(128,128,128,0.1); 
+		color: maroon;
+		border-radius: 7px;
+		padding: 5px;
+		display:block;
+		margin-left: 20px;
+		font-family: "Lucida Console", Monaco, monospace;
+		font-size: 14px;
+	}
+	blockquote { font-size: 15px; }
+	.item {
+		font-size: 10px; 
+		display: flex; 
+	} 
+</style>
+
+<script>
+	const USERNAMEVALUE = 0;
+	const EMAILVALUE = 1;
+	const SIDVALUE = 2;
+
+/* show/hide button  */
+function showHide(theID) {
+	var x = document.getElementById(theID);
+	if (x.style.display === "none") {
+	    x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+	
+	/* write the cookie */
+	function writecookie() { 
+		var x = document.getElementById("ln").value;
+		var y = document.getElementById("fn").value;
+		var emailvalue = document.getElementById("email").value;
+		var sidvalue = document.getElementById("sid").value;
+	
+		var cookievalue = "name="+x+"_"+y;
+		document.cookie = "lname="+x;
+		document.cookie = "fname="+y;
+		document.cookie = "userFileName="+x+"_"+y;
+		document.cookie = cookievalue; // "name="+cookievalue;
+		document.cookie = "email="+emailvalue;
+		document.cookie = "sid="+sidvalue;
+		document.cookie = "testing="+testmode;
+		return true;
+	}
+	
+	/* check id */
+	function checkID() {
+		var theSID = document.getElementById("sid").value;
+		var lname = document.getElementById("ln").value;
+		var fname = document.getElementById("ln").value;
+		var email = document.getElementById("email").value;
+		var x = "'ln="+lname+"'";
+		//alert(x);
+		var xhttp = new XMLHttpRequest();
+
+		// document.cookie = theName;
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var sid = this.responseText;
+
+				document.getElementById("sid").innerHTML = this.responseText;
+
+				if (sid.includes(theSID)) {
+					document.getElementById("cannotLoginMessage").innerHTML = "<div style='color:red;'>Sorry, only one attempt per term.</div>";
+					document.getElementById("cannotLoginMessage").style.display = "block";
+					isOkay = false;
+				} else {
+					// alert("Welcome.  Good luck! ");
+					document.getElementById("submitButton").style.display = "block";
+					isOkay = true;
+					/* window.location.href = "ta2-new.php?isLogin=t+ln=lname+fn=fname+email=email"; 
+					*/
+				}
+				this.responseText;
+			}
+		};
+		xhttp.open("GET", "SIDFile.txt", true);
+		xhttp.send();
+
+	}
+
+	var recordAttempt = false;
+	var CCOUNT = 60;  /* NUMBER OF SECONDS PER QUESTION */
+	var runningCount = 0; /* Student # of seconds to complete */
+    var t, count;
+
+
+</script>
+<meta charset="utf-8">
+</head>
+<body>
+<div id="header">
+<img src="images/berkeley-i-school.png" width="150px" >
+	<h2><font color="cornflowerblue">Welcome to the Python self-assessment site.</font></h2>
+	
+<p>There are three sections.
+		<ol>
+		<li>The first section of the assessment poses questions reflecting 
+		broad content areas covered in the Python course: 
+		Git and Github (1 question), Command line and General Computing (3 qs),
+		Python Language and Syntax (17 qs),
+		Algorithm Analysis (4 questions),
+		Object Oriented Programming (3 qs + more in coding),
+		Data Analysis (2 qs + more in coding). <br />
+		</li>
+		<li>Part 2 is entirely python coding.  Here you&rsquo;ll enter code in a web form text, 
+		submit it for testing, and then advance to the next question.
+		</li>
+		<li>The final questions requires you to work on your own computer and then 
+		enter your answers <i>exactly</i> as requested in the question.
+		</li></ol>
+	<hr />
+	Instructions.  <ul>
+		<li>Students can attempt the assessment only once per term.  Scores are stored and emailed to you and to the program director. </li>
+	<li>Once you start the assessment, you must progress only forward - answers cannot be revised.</li>
+	<li>Multiple choices questions are timed for 60 seconds.  After that you&rsquo;ll be directed automatically to the next question if you 
+	haven&rsquo;t already submitted an answer.</li>
+	<li>The short-coding questions are entered directly into this 
+	assessment site - be sure to use <u>spaces</u> and <u>not tabs</u>.  The submitted script is 
+	executed and a success/not-successful value is returned and stored.</li>
+	<li>The final question is a long one.  Work this question out on your own computer.  Then enter your answers in the site for testing.</li>
+	</ul>
+
+	<p>Please read the questions carefully.  Good luck!</p>
+</div>
+
+<div id="content">
+	<form name="studentidarea" method="post" action="ta2-new.php" onsubmit="return writecookie()">
+	<input type="hidden" name="isLogin" id="isLogin" value="t">
+	<input type="hidden" name="qno" id="qno" value="0">
+	<table>
+	<tr>
+	<td width="30%">What&rsquo;s your last name?</td>
+	<td><input type="text" id="ln" name="ln" placeholder="Jones" required /> </td>
+	</tr>
+	<tr><td>And your first? </td><td><input type="text" id="fn" name="fn" placeholder = "Jane" required/></td></tr>
+	<tr><td>Email </td><td><input type="email" id="email" name="email" placeholder = "janedoe@ucberkeley.edu" required/></td></tr>
+	<tr><td>Student ID</td><td><input type="text" id="sid" name="sid" placeholder = "x4fti" required onfocusout="checkID()"></td></tr>
+	<tr><td>
+		<font size="-2"><input type="checkbox" id="testmode" name="testmode" value="t"/> Check if testing questions.</font>
+		</td>
+		<td><input style="display:none;" id="submitButton" name="submitButton" type = "submit" value="Let&rsquo;s Proceed">
+		<td><span style="display:none;" id="cannotLoginMessage"/ >
+	</td></tr>
+	</form>
+	<script>document.getElementById("sid").addEventListener("focusout", checkID);
+	</script>
+</div>
+
+
+<div id="footer">
+	<p>&nbsp;</p>
+	UC Berkeley :: MIDs Program :: Test Version :: May 13, 2020.  <span id="datetime"></span>
+</div>
+
+<script>
+	document.getElementById("datetime").innerHTML = "Page generated on "+new Date()+".";
+	/* HIDE THINGS TO START 
+	document.getElementById("submitButton").style.display = "none";
+	*/
+
+</script>
+</body></html>

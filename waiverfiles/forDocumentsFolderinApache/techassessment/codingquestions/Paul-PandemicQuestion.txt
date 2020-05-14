@@ -1,0 +1,52 @@
+<h3>Pandemic Linearity</h3>
+<p>
+Pandemic Linearity is a simple board game in which a single player must identify 
+the source of a viral outbreak. It is played on board that consists of <i>n</i>
+ cities lined up in a row. The cities are numbered in order from  0 through <i>n - 1</i>.
+</p><p> 
+The rules of the game are as follows:
+<br />In the beginning, the case load for each city is set to 0. A single city is 
+chosen to be the epicenter, and begins with a caseload of 1. The epicenter 
+is a secret from the player.
+</p>
+<p>The game proceeds in time steps. Each time step has two parts:
+<ol>
+<li>
+First, the player selects a single city to <strong>inspect</strong>. 
+Inspecting a city means that the player learns the case load for that city.
+</li>
+<li>
+The disease spreads. Each city that either has a positive caseload or is
+ directly next to a city with a positive caseload increases its caseload by 1. 
+ All other cities continue to have 0 caseload.</li>
+</li></ol>
+</p><p>
+Note that the player learns the caseload of a city <i>before</i> the disease spreads.
+</p>
+<p>Your job is to implement the game Pandemic Linearity in Python 3. 
+Two classes are 
+required, a <code>Board</code> and a <code>Solver</code>.</p>
+<p>First, you will want to implement the Board class. It must include
+<ol>
+<li>A constructor that takes two arguments: the number of cities <i>n</i>, 
+and the number of the epicenter.
+</li>
+<li>
+An attribute, <code>size</code>, that contains the number of cities.</li>
+<li>
+A method, <code>move</code>, that takes a single argument, the number 
+of a city to inspect.
+</li>
+</ol>
+<p>This method must execute both parts of the time step (inspection followed by 
+disease spread) then return the caseload discovered in the inspection step.
+Your class must replicate the following behavior exactly. (Extra print statements 
+are included for clarity, but these will not be graded.)</p>
+<hr />
+<p>
+What command generates <code>Creating board: [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+</p>
+<p>
+Output the size of the board: 10
+</p>
+<p>

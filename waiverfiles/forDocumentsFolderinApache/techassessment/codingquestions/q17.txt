@@ -1,0 +1,13 @@
+<div class="tab">
+<p class="area">Algorithm Analysis</p><p>
+Python&rsquo;s dynamic typing allows one variable to refer to multiple
+ types of objects within the same program execution. This can speed program 
+ development. Name one disadvantage of dynamic typing.<br />
+<ol type="a">
+<li><input type='radio' name='q17' id='q17' value='a'> Requires more boilerplate code to set up variables.</li>
+<li><input type='radio' name='q17' id='q17' value='b'> Requires using the map function.</li>
+<li><input type='radio' name='q17' id='q17' value='c'> Requires using lambda functions.</li>
+<li><input type='radio' name='q17' id='q17' value='d'> Type mismatch errors cannot be detected until runtime.</li>
+<li><input type='radio' name='q17' id='q17' value='e'> Requires more developer time.
+</li></ol>
+</p></div>

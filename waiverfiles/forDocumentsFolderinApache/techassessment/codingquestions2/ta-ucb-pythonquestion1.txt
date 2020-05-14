@@ -1,0 +1,1 @@
+Write a function (named <code>count_letters</code>) that takes a string as an argument, counts each letter in that string and returns the letter with the highest count.

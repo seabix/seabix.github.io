@@ -1,0 +1,12 @@
+<div class="tab">
+<p class="area">Python Language and Syntax</p><p>
+What <u>keyword</u> is used to create a function in Python?
+<ol type="a">
+<li><input type='radio' name='q26' id='q26' value='a'> <code>def</code></li>
+<li><input type='radio' name='q26' id='q26' value='b'> <code>class</code></li>
+<li><input type='radio' name='q26' id='q26' value='c'> <code>function</code></li>
+<li><input type='radio' name='q26' id='q26' value='d'> <code>lambda</code></li>
+<li><input type='radio' name='q26' id='q26' value='e'> a and c</li>
+<li><input type='radio' name='q26' id='q26' value='f'> a and d
+</li></ol>
+</p></div>
