@@ -1,0 +1,11 @@
+<div class="tab">
+<p class="area">Object Oriented Programming</p><p>
+Identify three concepts central to object-oriented programming.
+<ol type="a">
+<li><input type='radio' name='q12' id='q12' value='a'> Iteration, Conditionals, Memory</li>
+<li><input type='radio' name='q12' id='q12' value='b'> Classification, Clustering, Methods</li>
+<li><input type='radio' name='q12' id='q12' value='c'> Inheritance, Polymorphism, Stateless Programming</li>
+<li><input type='radio' name='q12' id='q12' value='d'> Inheritance, Polymorphism, Encapsulation</li>
+<li><input type='radio' name='q12' id='q12' value='e'> Object, Method, List
+</li></ol>
+</p></div>

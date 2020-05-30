@@ -1,0 +1,10 @@
+<div class="tab">
+<p class="area">Algorithm Analysis</p><p>
+What is the measure of the worst case scenario of algorithmic performance?
+<ol type="a">
+<li><input type='radio' name='q11' id='q11' value='a'> Regression</li>
+<li><input type='radio' name='q11' id='q11' value='b'> Big O</li>
+<li><input type='radio' name='q11' id='q11' value='c'> Big Omega</li>
+<li><input type='radio' name='q11' id='q11' value='d'> Bob&rsquo;s Big Boy</li>
+</ol>
+</p></div>

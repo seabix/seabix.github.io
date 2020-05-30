@@ -1,0 +1,20 @@
+<div class="tab">
+<p class="area">Algorithm Analysis</p><p>
+You write a Python script to compute factorials and then test it using a debugger.  
+In the middle of running your script, you notice that the call stack looks like this:
+<br /><br />
+<code>
+in ‘__main__’ at line 6<br />
+in f() at line 4<br />
+in f() at line 2<br />
+</code>
+
+<br />What technique are you sure this script uses?
+<ol type="a">
+<li><input type='radio' name='q27' id='q27' value='a'> top-down design</li>
+<li><input type='radio' name='q27' id='q27' value='b'> a for loop or a while loop</li>
+<li><input type='radio' name='q27' id='q27' value='c'> a lambda function</li>
+<li><input type='radio' name='q27' id='q27' value='d'> regression</li>
+<li><input type='radio' name='q27' id='q27' value='e'> recursion</li>
+</ol>
+</p></div>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>testing code.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body { 
+	padding: 10px;
+	font-family: "Avenir Next", Raleway, sans-serif;
+	font-size: 10px;
+}
+
+code { width: 100%;
+	border-radius: 2px;
+	background-color: #fff0cd;
+	line-height: 1.3em;
+	width: auto;
+	color: maroon;
+	padding: 3px; 
+}
+
+form { border-radius: 5px; 
+	padding: 15px;
+	background-color: #cddaff; 
+	font-size: 16px; 
+	color: black;
+}
+
+#footer {
+	width: 100%;
+	height: 5vh;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 8px;
+	color: #ffd7cd;
+}
+
+textarea { 
+	font-family: Courier, mono;
+	font-size:16px;
+}
+
+#democode { font-family: 'Courier', monospaced;
+	font-size:10px;
+	-moz-tab-size: 16;
+	tab-size: 16;
+}
+
+form.coding { border-radius: 5px; 
+	width:100%;
+	padding: 5px;
+	background-color: white;
+	font-size: 12px;
+	color: black;
+}
+
+input[type="radio"] {margin:10px 5px};}
+
+  </style>
+</head>
+<body>
+<p>Testing the code ... </p>
+<hr />
+<!-- end of header-code.txt -->

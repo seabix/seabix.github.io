@@ -1,0 +1,11 @@
+<div class="tab">
+<p class="area">Python Language and Syntax</p><p>
+Which of the following is required to access your or others&rsquo; <u>package</u>?
+<ol type="a">
+<li><input type='radio' name='q25' id='q25' value='a'> <code>import</code></li>
+<li><input type='radio' name='q25' id='q25' value='b'> <code>use</code></li>
+<li><input type='radio' name='q25' id='q25' value='c'> <code>__init.py__</code></li>
+<li><input type='radio' name='q25' id='q25' value='d'> <code>__main__</code></li>
+<li><input type='radio' name='q25' id='q25' value='e'> <code>__import__</code>
+</li></ol>
+</p></div>

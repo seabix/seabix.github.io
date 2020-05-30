@@ -1,0 +1,31 @@
+<div class="tab">
+<p class="area">
+Object Oriented Programming</p><p>
+The following class Cart and method <code>add_to_cart</code> are parts of a larger program used 
+by a mobile phone company.<br />
+<code><br />
+class Cart():<br />
+def __init__(self):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.cart = []<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.total = 0<br />
+<br />
+def add_to_cart(item):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.cart.append(item)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.total += item.price<br />
+</code>
+</p>
+<p>
+The method <code>add_to_cart</code> will work when an object of type MobileDevice or of 
+type ServiceContract is passed to it. The method add_to_cart is a demonstration 
+of which of the following items:
+<ol type="a">
+<li><input type='radio' name='q6' id='q6' value='a'> Inheritance</li>
+<li><input type='radio' name='q6' id='q6' value='b'> Top-down design </li>
+<li><input type='radio' name='q6' id='q6' value='c'> Duck typing</li>
+<li><input type='radio' name='q6' id='q6' value='d'> a and b</li>
+<li><input type='radio' name='q6' id='q6' value='e'> b and c</li>
+<li><input type='radio' name='q6' id='q6' value='f'> a and c</li>
+<li><input type='radio' name='q6' id='q6' value='g'> All of the above</li>
+<li><input type='radio' name='q6' id='q6' value='h'> None of the above</li>
+</p>
+</div>

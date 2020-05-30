@@ -1,0 +1,16 @@
+<div class="tab">
+<p class="area">Git and Github</p>
+<p>
+Suppose you have just saved changes to a file on your local machine.  What command or commands are needed to upload the file to Github?
+</p>
+<ol type="a">
+<li><input type='radio' name='q1' id='q1' value='a'><code> git add &lt;filename&gt;</code></li>
+<li><input type='radio' name='q1' id='q1' value='b'><code> git commit -m “msg”</code></li>
+<li><input type='radio' name='q1' id='q1' value='c'><code> git push origin master</code></li>
+<li><input type='radio' name='q1' id='q1' value='d'> a and b</li>
+<li><input type='radio' name='q1' id='q1' value='e'> b and c</li>
+<li><input type='radio' name='q1' id='q1' value='f'> a and c</li>
+<li><input type='radio' name='q1' id='q1' value='g'> All of the above</li>
+<li><input type='radio' name='q1' id='q1' value='h'> None of the above</li>
+</ol>
+</div>

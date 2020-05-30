@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- on the server -->
+<head>
+  <title>waiver.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="finalcss.css">
+  <style>
+  	img.a { width: 25vw; 
+  	-ms-transform: rotate(9deg);
+  	transform: rotate(9deg);
+  	border-radius: 5px;
+  	border: 1px solid #ddd;
+  	padding: 5px;
+  	z-index: 4;
+  	position: absolute;
+  	top: 20%;
+  	left: 62%;
+}
+	img.b { 
+	width: 25vw; 
+  	-ms-transform: rotate(-3deg);
+  	transform: rotate(-3deg);
+  	border-radius: 5px;
+  	border: 1px solid #ddd;
+  	padding: 5px;
+  	z-index: 5;
+  	position: absolute;
+  	top: 50%;
+  	left: 52%;
+  	}
+  </style>
+</head>
+<body>
+<img width="200wv" src="images/berkeleyischool-logo.svg" /><br />
+waiver.
+<hr />
+<form name="loginform" method="post" action="checksid.php" >
+<table width="50%">
+<tr><td width="25%">Last name: </td><td><input type="text" id="lname" name="lname" placeholder="Smith" required></td></tr>
+<tr><td>First name:</td><td> <input type="text" id="fname" name="fname" placeholder="Avik" required></td></tr>
+<tr><td>Email:</td><td> <input type='text' name='email' id='email' placeholder='geez@berkeley.edu' required></td></tr>
+<tr><td>Student ID:</td><td> <input type='text' name='sid' id='sid' placeholder='12345' required></td></tr>
+<tr><td colspan='2'><input type="submit" value="Go."></td></tr>
+</table>
+</form>
+<hr />
+
+
+<div id="footer">
+	as of may 28, 2020.  page generated <span id='datetimestamp'></span><br />
+	<img class='a' src="images/1920px-UCBerkeleyCampus.jpg" />
+</div>
+<script>document.getElementById("datetimestamp").innerHTML = new Date();</script>
+<img class='b' src="images/wheeler.png" />
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+<div class="tab">
+<p class="area">Python Language and Syntax</p>
+<p>
+Suppose that countries is a list containing 1,000,000,000 elements.  
+Which of the following statements will take the least time to execute?
+<ol type="a">
+<li><input type='radio' name='q8' id='q8' value='a'> <code>var = [len(x) for x in countries]</code></li>
+<li><input type='radio' name='q8' id='q8' value='b'> <code>
+var = []<br />
+&nbsp;&nbsp;&nbsp;&nbsp;for x in countries:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var.append(len(x))</code></li>
+<li><input type='radio' name='q8' id='q8' value='c'> <code>var = (len(x) for x in countries)</code></li>
+<li><input type='radio' name='q8' id='q8' value='d'> a and b</li>
+<li><input type='radio' name='q8' id='q8' value='e'> b and c</li>
+<li><input type='radio' name='q8' id='q8' value='f'> a and c</li>
+<li><input type='radio' name='q8' id='q8' value='g'> All of the above</li>
+<li><input type='radio' name='q8' id='q8' value='h'> None of the above</li></ol>
+</p></div>

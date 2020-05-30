@@ -1,0 +1,13 @@
+<div class="tab">
+<p class="area">Python Language and Syntax</p><p>
+Which of the following is a possible output of this line of code:<br />
+<code>print(str(PlayingCard('A', '♠') == 'A of ♠'))</code>
+<br />
+<ol type="a">
+<li><input type='radio' name='q30' id='q30' value='a'> ♠</li>
+<li><input type='radio' name='q30' id='q30' value='b'> A</li>
+<li><input type='radio' name='q30' id='q30' value='c'> A of ♠</li>
+<li><input type='radio' name='q30' id='q30' value='d'> None</li>
+<li><input type='radio' name='q30' id='q30' value='e'> False</li>
+<li><input type='radio' name='q30' id='q30' value='f'> ‘True’</li></ol>
+</p></div>

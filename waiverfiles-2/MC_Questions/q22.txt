@@ -1,0 +1,13 @@
+<div class="tab">
+<p class="area">Data Analysis</p>
+<p>What will be the output of this code (given a date of the Fourth of July, 2020)?<br /><br />
+<code>
+a = struct_date<br />
+struct_date.strftime("%d/%m/%y")
+</code>
+<li><input type='radio' name='q22' id='q22' value='a'> 2020/07/04</li>
+<li><input type='radio' name='q22' id='q22' value='b'> 20/07/04</li>
+<li><input type='radio' name='q22' id='q22' value='c'> 07/04/20</li>
+<li><input type='radio' name='q22' id='q22' value='d'> 04/07/20
+</li></ol>
+</p></div>

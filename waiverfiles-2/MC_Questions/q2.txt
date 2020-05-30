@@ -1,0 +1,15 @@
+<div class="tab">
+<p class="area">Command line and General Computing</p>
+<p>
+In Unix what does the <code>mv</code> command do?
+<ol type="a"></li>
+<li><input type='radio' name='q2' id='q2' value='a'> copy a file into two locations</li>
+<li><input type='radio' name='q2' id='q2' value='b'> move a file from one place to another</li>
+<li><input type='radio' name='q2' id='q2' value='c'> rename a file</li>
+<li><input type='radio' name='q2' id='q2' value='d'> a and b</li>
+<li><input type='radio' name='q2' id='q2' value='e'> b and c</li>
+<li><input type='radio' name='q2' id='q2' value='f'> a and c</li>
+<li><input type='radio' name='q2' id='q2' value='g'> All of the above</li>
+<li><input type='radio' name='q2' id='q2' value='h'> None of the above</li>
+</ol></p>
+</div>

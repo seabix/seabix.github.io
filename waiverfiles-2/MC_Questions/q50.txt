@@ -1,0 +1,133 @@
+<style>
+#specialbox { border-radius: 3px;
+	padding: 4px;
+	background-color: rgba(204,51,0, 0.3);
+	color: navyblue;
+}
+</style>
+<blockquote id="specialbox">
+	Please read all the directions <i>very carefully</i> before submitting your class tests and final run. 
+</blockquote>
+
+<h2>Pandemic Linearity</h2>
+
+<p> Pandemic Linearity is a board game in which a single player must identify the 
+source of a viral outbreak. It is played on board that consists of <i>n</i> cities 
+lined up in a row.  The cities are numbered in order from 0 through <i>n - 1</i>.  
+The rules of the game are as follows: </p> 
+
+<p> In the beginning, the case load for each city is set to 0. A single city is chosen 
+to be the epicenter, and begins with a caseload of 1. The epicenter is a secret from 
+the player.</p>
+
+<p>The game proceeds in time steps. Each time step has
+two parts:
+	<ol>
+	<li>First, the player selects a single city to inspect.
+		Inspecting a city means that the player learns the case load for that
+		city. </li>
+	<li>
+		The disease spreads. Each city that either has a positive
+		caseload or is directly next to a city with a positive caseload
+		increases its caseload by 1. All other cities continue to have 0
+		caseload.</li>
+	</ol>
+</p>
+
+<p>Note that the player learns the caseload of a city <strong>before</strong>
+the disease spreads.</p>
+
+<p>Your task is to implement the game Pandemic Linearity in Python 3. 
+	You will have to create two classes, one called <code>Board</code> and one called 
+	<code>Solver</code>.
+</p>
+
+<p>First you&rsquo;ll create the <code>Board</code> class and submit it below for 
+	testing. The next question asks you to create the <code>Solver</code> class and test it.
+	Finally, you&rsquo;ll integrate and test the whole.
+</p>
+
+<p>Your <code>Board</code> class must include</p>
+
+<ol>
+	<li>A constructor that takes two arguments:
+	<ol>
+		<li>the number of cities <i>n</i>,</li>
+		<li>and the number of the epicenter.</li>
+	</ol>
+	</li>
+	<li>An attribute, <code>size</code>, that contains the number of cities.</li>
+	<li>A method, <code>move</code>, that takes a single argument, the number of a 
+		city to inspect. This method must execute both parts of the time step 
+		(inspection followed by disease spread) then return the caseload discovered in the
+		inspection step.</li>
+	</ol>
+
+<p>
+	Your class must replicate the following behavior exactly. 
+	(Extra print statements are included for clarity, but these will not be graded.)
+</p>
+
+<p>
+<code>&gt;&gt;&gt; board = Board(10,20)<br />
+Creating board: [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]<br />
+<br />
+&gt;&gt;&gt; print(board.size)<br />
+10<br />
+<br />
+&gt;&gt;&gt; board.move(0)<br />
+Checking location 0 Value = 0<br />
+New board: [0, 1, 2, 1, 0, 0, 0, 0, 0, 0]<br/>
+0<br />
+<br />
+&gt;&gt;&gt; board.move(1)<br />
+Checking location 1 Value = 1<br />
+New board: [1, 2, 3, 2, 1, 0, 0, 0, 0, 0]<br/>
+1<br />
+<br />
+&gt;&gt;&gt; board.move(2)<br />
+Checking location 2 Value = 3<br />
+New board: [2, 3, 4, 3, 2, 1, 0, 0, 0, 0]<br/>
+3</code>
+</p>
+
+<p>Part 2 - the Solver class<p>
+
+The <code>Solver</code> class represents a player that strategically plays the game to 
+identify the epicenter.</p>
+
+<p>It must include a <u>constructor</u> that
+	<ol>
+	<li>includes one argument: a <code>Board</code> instance to be solved.</li>
+	<li>A method that you name <code>solve</code>, that takes no arguments. 
+		This method must interact with the Board instance <strong>only</strong>
+
+		<ul><li>by checking the <code>size</code> attribute and </li>
+			<li>calling the <code>move</code> method</li>
+			<li>No other interaction is allowed.</li>
+		
+			<li>The solve method should do this <u>until the location of the epicenter 
+				has been deduced</u>,</li>
+			<li>and then return the location.</li>
+		</ul>
+	</ol>
+</p>
+
+<p>For example, the code below should print the value 3.</p>
+
+<blockquote>
+<code>board = Board(10,3) <br />
+solver = Solver(board)<br />
+print(solver.solve())</code> <br />
+</blockquote>
+
+<p>
+Part of your grade for this problem depends on how quickly your <code>Solver</code>
+returns the correct answer - the fewer moves the better!  <br />Note that we may 
+test your Solver on boards with more than 1000 cities.
+</p>
+
+<hr />
+<h2>Your Code:</h2>
+<p>Create your <code>Board</code> and <code>Solver</code> classes and submit the code. 
+Your code submission will be tested and a runtime total score displayed.</p>

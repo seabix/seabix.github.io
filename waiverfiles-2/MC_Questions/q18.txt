@@ -1,0 +1,17 @@
+<div class="tab">
+<p class="area">Python Language and Syntax</p><p>
+Discuss one reason to use a <code>for</code> loop over a <code>while</code> loop 
+and one reason to use a <code>while</code> loop over a <code>for</code> loop.
+<ol type="a">
+<li><input type='radio' name='q18' id='q18' value='a'> For loop = when the number of iterations is known beforehand; 
+while loop = don’t know the number of iterations but need a condition met.</li>
+<li><input type='radio' name='q18' id='q18' value='b'> For loop = when the number of iterations is UNknown beforehand; 
+while loop = don’t know the number of iterations but need a condition met.</li>
+<li><input type='radio' name='q18' id='q18' value='c'> For loop = when the number of iterations is known beforehand; 
+while loop = when we know the number of iterations; there is no difference.</li>
+<li><input type='radio' name='q18' id='q18' value='d'> For loop = when writing functional code; 
+while loop = when writing object-oriented code.</li>
+<li><input type='radio' name='q18' id='q18' value='e'> For loop = when the number of iterations is known before; 
+while look = when we cannot use recursion.
+</li></ol>
+</p></div>

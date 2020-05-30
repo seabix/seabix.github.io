@@ -1,0 +1,24 @@
+<style>
+.activequestion { border-radius: 3px;
+	padding: 4px;
+	background-color: rgba(204,51,0, 0.3);
+	color: navyblue;
+}
+.notyet { color: silver; }
+</style>
+<p>
+Use the <code>matplotlib</code> library and the <code>airline-safety.csv</code> 
+to answer the following questions:
+<ol>
+	<li>Plot a histogram of incidents in the 85-99 period [48]</li>
+	<li>Make a line chart of the first five airlines with the most available seat 
+	km per week, comparing their fatalities in 85-99 period to the fatalities 
+	in the 00-14 period. [49]</li>
+</ol>
+</p>
+<hr />
+
+	<blockquote class="activequestion">
+	Plot a histogram of incidents in the 85-99 period. [48]
+	</blockquote>
+<br />

@@ -1,0 +1,1 @@
+Write a function (named <code>bisect</code>) that takes a <code>float</code> as an argument, uses the bisectional algorithm to come up with the square root of the number and returns that square root.

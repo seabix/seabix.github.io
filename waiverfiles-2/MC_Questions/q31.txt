@@ -1,0 +1,12 @@
+<div class="tab">
+<p class="area">Python Language and Syntax</p>
+<p>
+From the code snippet below -  what is the best description of "Student" and "None"?<br />
+<br /><code>def grader(name = "Student", grade = "None"):</code>
+<ol type="a">
+<li><input type='radio' name='q31' id='q31' value='a'> Arguments</li>
+<li><input type='radio' name='q31' id='q31' value='b'> Defaults</li>
+<li><input type='radio' name='q31' id='q31' value='c'> Objects</li>
+<li><input type='radio' name='q31' id='q31' value='d'> Equivalency Operators</li>
+<li><input type='radio' name='q31' id='q31' value='e'> Strings</li></ol>
+</p></div>
