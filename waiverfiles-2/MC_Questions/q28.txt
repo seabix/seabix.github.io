@@ -1,15 +1,20 @@
 <div class="tab">
 <p class="area">Python Language and Syntax</p><p>
-Given the code: <br />
-<code>x = input("Enter your options from A, B, or C:")<br />
-assert x in ("A”,”B”,”C") </code>
-<br />
-
-What is the best way to improve it?
+Which option is true about this code sample (the line numbers <span style="color:brown">ln1, ln2, ln3</span> are just for reference):<br />
+<br>
+<code>
+<span style="color:silver">ln1</span> class menuPrompt(): <br />
+<span style="color:silver">ln2</span> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self): <br />
+<span style="color:silver">ln3</span> &nbsp;&nbsp;&nbsp;&nbsp;"""Sets up the API Keys and prints the intro"""
+</code>
 <ol type="a">
-<li><input type='radio' name='q28' id='q28' value='a'> Wrap the code in a try-except block so the program execution can continue</li>
-<li><input type='radio' name='q28' id='q28' value='b'> Delete the assert statement so the program doesn’t abruptly halt.</li>
-<li><input type='radio' name='q28' id='q28' value='c'> Instead of the assert, raise an exception with an informative note for the end user to see</li>
-<li><input type='radio' name='q28' id='q28' value='d'> Replace the assert with a loop so the user is repeatedly asked for an option until they enter a valid input.</li>
+<li><input type='radio' name='q28' id='q28' value='a'> Line 3 is a docstring</li>
+<li><input type='radio' name='q28' id='q28' value='b'> Line 2 is an incorrectly formed constructor</li>
+<li><input type='radio' name='q28' id='q28' value='c'> Line 1 is an incorrect because there are no parameters</li>
+<li><input type='radio' name='q28' id='q28' value='d'> a and b</li>
+<li><input type='radio' name='q28' id='q28' value='e'> b and c</li>
+<li><input type='radio' name='q28' id='q28' value='f'> a and c</li>
+<li><input type='radio' name='q28' id='q28' value='g'> All of the above</li>
+<li><input type='radio' name='q28' id='q28' value='h'> None of the above</li>
 </ol>
 </p></div>

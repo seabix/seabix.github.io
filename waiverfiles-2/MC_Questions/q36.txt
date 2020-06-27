@@ -1,1 +1,51 @@
-Write a <code>lambda</code> function that takes the input of the list below and only returns the numbers that are divisible by 8. <code>test_list = [2,8,17,32,66,128,256,532]</code>
+<style>
+.activequestion { border-radius: 3px;
+	padding: 4px;
+	background-color: rgba(204,51,0, 0.3);
+	color: navyblue;
+}
+.notyet { color: silver; }
+ol.m {list-style-type: lower-latin;}
+</style>
+
+
+<h2>Coding Question 1: Data Analysis with numpy</h2>
+<p>
+For this question, use the code below to make an array named ar. Using this array please write-in the answers to each of the questions below:
+</p>
+<code>
+# Do NOT change this code!<br />
+import numpy as np<br />
+np.random.seed(25)<br />
+ar = np.random.randn(1000)<br />
+ar = ar * 100<br />
+ar = ar.astype('int8')<br />
+ar = ar.reshape((200, 5))<br />
+</code>
+<p></p>
+<form method="post" action="randomz.php">
+<input type="hidden" id="qno" name="qno" value="36"/>
+
+<p>Questions</p>
+<ol>
+<li>Using numpy, find the <u>max</u> value, <u>min</u> value and <u>mean</u> of the array <code>ar</code>.   
+<br />Min <input type="text" id="q1a" name="q1a" width="10" placeholder="min"/ >
+<br />Max <input type="text" id="q1b" name="q1b" width="10" placeholder="max"/ >
+<br />Mean <input type="text" id="q1c" name="q1c" width="10" placeholder="mean"/ ></li>
+<li>Using numpy, what is the number at the position of the 8th row and 2nd column of the array <code>ar</code>?
+<input type="text" id="q1d" name="q1d" width="10" placeholder="8,2"/></li>
+
+<li>Using numpy, how many numbers in the array <code>ar</code> are above the mean? 
+<br />
+<input type="text" id="q1e" name="q1e" width="10" /></li>
+<li>Using numpy, what is the sum of the values of the array <code>ar</code> that are 
+greater than -5 above and less than or equal to 20? 
+<br /><input type="text" id="q1f" name="q1f" width="10" /></li>
+<li>Using numpy, what is the <u>position of the max value</u> of the array <code>ar</code>? 
+Give the answer as a tuple, such as: <code>(10,3)</code>
+<br /> <input type="text" id="q1g" name="q1g" width="10" placeholder="(10,3)"/></li>
+</ol>
+
+<!-- note that the form starts in the question file but the end-form and submit must be in codeOffline.php -->
+<!-- end of q1.txt -->
+

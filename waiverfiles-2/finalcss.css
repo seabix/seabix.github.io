@@ -1,9 +1,21 @@
-body { 
-	padding: 20px;
-	font-family: "Avenir Next", Raleway, sans-serif;
-	font-size: 16px;
+@font-face { 
+	font-family: "Abel-Regular";
+	src: url('fonts/Abel-Regular.eot'),
+	url('fonts/Abel-Regular.woff2') format('woff2'),
+	url('fonts/Abel-Regular.woff') format('woff'),
+	url("fonts/Abel-Regular.ttf") format("truetype"),
+	url("fonts/Abel-Regular.svg") format("svg");
 }
 
+body { 
+	padding: 20px;
+	font-family: "Abel-Regular", "Avenir Next", Raleway, sans-serif;
+	font-size: 13px;
+}
+p.area { 
+	font-size: 8px;
+	font-variant: oblique;
+}
 code { width: 100%;
 	border-radius: 2px;
 	background-color: #fff0cd;
@@ -16,7 +28,7 @@ code { width: 100%;
 form { border-radius: 5px; 
 	padding: 15px;
 	background-color: #cddaff; 
-	font-size: 16px; 
+	font-size: 13px; 
 	color: black;
 }
 
@@ -26,7 +38,7 @@ form { border-radius: 5px;
 	text-align: center;
 	vertical-align: middle;
 	font-size: 8px;
-	color: #ffd7cd;
+	color: #003262; /* #ffd7cd; */
 }
 
 textarea { font-family: Courier, mono;
@@ -43,8 +55,10 @@ form.coding { border-radius: 5px;
 	width:100%;
 	padding: 5px;
 	background-color: white;
-	font-size: 16px;
+	font-size: 13px;
 	color: black;
 }
 
-input[type="radio"]{margin:10px 0};}
+input[type="radio"]{
+  margin: 10px 10px 10px 10px;
+}

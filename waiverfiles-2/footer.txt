@@ -1,7 +1,7 @@
 <!-- start of footer.txt -->
 <hr />
 <div id="footer">
-	as of may 25, 2020.  page generated <span id='datetimestamp'></span>
+	June 23, 2020. Page generated <span id='datetimestamp'></span>
 </div>
 <script>document.getElementById("datetimestamp").innerHTML = new Date();</script>
 </body>

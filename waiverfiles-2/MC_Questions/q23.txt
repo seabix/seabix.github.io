@@ -1,12 +1,19 @@
 <div class="tab">
 <p class="area">Python Language and Syntax</p><p>
-What does <code>pickle</code> do?
-
+In this example, we have data already stored in a variable called <code>data</code>. 
+What does the rest of the code do?
+<br /><br />
+<code>
+countries = sorted([e["Country"] for e in data])<br />
+with open("question_1.csv", "w") as f:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;writer = csv.writer(f, lineterminator="\n")<br />
+&nbsp;&nbsp;&nbsp;&nbsp;writer.writerows(countries)<br />
+</code>
 <ol type="a">
-<li><input type='radio' name='q23' id='q23' value='a'> serialization, meaning saving a program's state data to disk so that it can carry 
-	on where it left off when restarted (persistence); and send data over TCP, and convert arbitrary python objects to string</li>
-<li><input type='radio' name='q23' id='q23' value='b'> serialization, meaning saving a program's source code to disk so that it can carry on where it left off when restarted (persistence); and send data over TCP, and convert arbitrary python objects to string</li>
-<li><input type='radio' name='q23' id='q23' value='c'> objectification, meaning converting a program's functions to objects so that they can be shared in a library (encapsulation)</li>
-<li><input type='radio' name='q23' id='q23' value='d'> objectification, meaning converting a program's functions to objects so that they can be saved to disk and shared
-</li></ol>
+<li><input type='radio' name='q23' id='q23' value='a'> Writes the contents of the variable f to the file</li>
+<li><input type='radio' name='q23' id='q23' value='b'> Creates a file named countries</li>
+<li><input type='radio' name='q23' id='q23' value='c'> Reads in a file named question_1.csv</li>
+<li><input type='radio' name='q23' id='q23' value='d'> Prints a list of the sorted countries</li>
+<li><input type='radio' name='q23' id='q23' value='e'> Writes the country names to a file in alphabetical order</li>
+</ol>
 </p></div>

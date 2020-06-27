@@ -2,10 +2,13 @@
 <p class="area">Python Language and Syntax</p><p>
 Which of the following pairs are mutable objects?
 <ol type="a">
-<li><input type='radio' name='q14' id='q14' value='a'> list, dictionary</li>
-<li><input type='radio' name='q14' id='q14' value='b'> set, tuple</li>
-<li><input type='radio' name='q14' id='q14' value='c'> string, tuple</li>
-<li><input type='radio' name='q14' id='q14' value='d'> int, bool</li>
-<li><input type='radio' name='q14' id='q14' value='e'> range, dictionary
+<li><input type='radio' name='q14' id='q14' value='a'> list, set</li>
+<li><input type='radio' name='q14' id='q14' value='b'> dictionary, tuple</li>
+<li><input type='radio' name='q14' id='q14' value='c'> string, int</li>
+<li><input type='radio' name='q14' id='q14' value='d'> a and b</li>
+<li><input type='radio' name='q14' id='q14' value='e'> b and c</li>
+<li><input type='radio' name='q14' id='q14' value='f'> a and c</li>
+<li><input type='radio' name='q14' id='q14' value='g'> All of the above</li>
+<li><input type='radio' name='q14' id='q14' value='h'> None of the above</li>
 </li></ol>
 </p></div>

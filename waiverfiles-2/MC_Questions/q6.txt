@@ -3,15 +3,15 @@
 Object Oriented Programming</p><p>
 The following class Cart and method <code>add_to_cart</code> are parts of a larger program used 
 by a mobile phone company.<br />
-<code><br />
-class Cart():<br />
-def __init__(self):<br />
-&nbsp;&nbsp;&nbsp;&nbsp;self.cart = []<br />
-&nbsp;&nbsp;&nbsp;&nbsp;self.total = 0<br />
 <br />
-def add_to_cart(item):<br />
-&nbsp;&nbsp;&nbsp;&nbsp;self.cart.append(item)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;self.total += item.price<br />
+<code>class Cart():<br />
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.cart = []<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.total = 0<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;def add_to_cart(item):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.cart.append(item)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.total += item.price<br />
 </code>
 </p>
 <p>

@@ -1,11 +1,11 @@
 <div class="tab">
 <p class="area">
 Command line and General Computing</p><p>
-In Unix how would you add the line “Test line” to a file called <code>file.txt</code>?
+In Unix how would you add the line “Test line” to <code>file.txt</code>?
 <ol type="a">
-<li><input type='radio' name='q3' id='q3' value='a'> <code>&ldquo;Test line&rdquo; &gt;&gt; file.txt</code></li>
-<li><input type='radio' name='q3' id='q3' value='b'> <code>echo &ldquo;Test line&rdquo; &gt;&gt; file.txt</code></li>
-<li><input type='radio' name='q3' id='q3' value='c'> <code>echo &lsquo;Test line&rsquo; | file.txt</code></li>
+<li><input type='radio' name='q3' id='q3' value='a'> <code>echo "Test line" > file.txt</code></li>
+<li><input type='radio' name='q3' id='q3' value='b'> <code>echo "Test line" >> file.txt</code></li>
+<li><input type='radio' name='q3' id='q3' value='c'> <code>echo 'Test line' | file.txt</code></li>
 <li><input type='radio' name='q3' id='q3' value='d'> a and b</li>
 <li><input type='radio' name='q3' id='q3' value='e'> b and c</li>
 <li><input type='radio' name='q3' id='q3' value='f'> a and c</li>

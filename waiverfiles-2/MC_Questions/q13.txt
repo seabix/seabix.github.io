@@ -3,9 +3,13 @@
 What is the correct way to change a single letter inside a string object, 
 without creating any new strings?
 <ol type="a">
-<li><input type='radio' name='q13' id='q13' value='a'> use bracket notation to assign the letter.</li>
-<li><input type='radio' name='q13' id='q13' value='b'> use a set method.</li>
-<li><input type='radio' name='q13' id='q13' value='c'> perform an in-place search and replace.</li>
-<li><input type='radio' name='q13' id='q13' value='d'> this is not possible.
+<li><input type='radio' name='q13' id='q13' value='a'> Use bracket notation to assign the letter.</li>
+<li><input type='radio' name='q13' id='q13' value='b'> Use a set method. </li>
+<li><input type='radio' name='q13' id='q13' value='c'> Perform an in-place search and replace.</li>
+<li><input type='radio' name='q13' id='q13' value='d'> a and b</li>
+<li><input type='radio' name='q13' id='q13' value='e'> b and c</li>
+<li><input type='radio' name='q13' id='q13' value='f'> a and c</li>
+<li><input type='radio' name='q13' id='q13' value='g'> All of the above</li>
+<li><input type='radio' name='q13' id='q13' value='h'> This cannot be done</li>
 </li></ol>
 </p></div>

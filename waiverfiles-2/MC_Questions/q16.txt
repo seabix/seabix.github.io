@@ -4,11 +4,13 @@ What is the <code>np</code> in this <code>import</code> statement?<br /><br />
 
 <code>import numpy as np</code><br />
 <ol type="a">
-<li><input type='radio' name='q16' id='q16' value='a'> a variable</li>
-<li><input type='radio' name='q16' id='q16' value='b'> code</li>
-<li><input type='radio' name='q16' id='q16' value='c'> a name space</li>
-<li><input type='radio' name='q16' id='q16' value='d'> an object space</li>
-<li><input type='radio' name='q16' id='q16' value='e'> a name space and an alias</li>
-<li><input type='radio' name='q16' id='q16' value='f'> an object space and code</li>
+<li><input type='radio' name='q16' id='q16' value='a'> object space</li>
+<li><input type='radio' name='q16' id='q16' value='b'> namespace </li>
+<li><input type='radio' name='q16' id='q16' value='c'> alias</li>
+<li><input type='radio' name='q16' id='q16' value='d'> a and b</li>
+<li><input type='radio' name='q16' id='q16' value='e'> b and c</li>
+<li><input type='radio' name='q16' id='q16' value='f'> a and c</li>
+<li><input type='radio' name='q16' id='q16' value='g'> All of the above</li>
+<li><input type='radio' name='q16' id='q16' value='h'> None of the above</li>
 </ol>
 </p></div>

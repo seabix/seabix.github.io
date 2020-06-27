@@ -1,13 +1,10 @@
 <div class="tab">
-<p class="area">Data Analysis</p>
-<p>What will be the output of this code (given a date of the Fourth of July, 2020)?<br /><br />
-<code>
-a = struct_date<br />
-struct_date.strftime("%d/%m/%y")
-</code>
-<li><input type='radio' name='q22' id='q22' value='a'> 2020/07/04</li>
-<li><input type='radio' name='q22' id='q22' value='b'> 20/07/04</li>
-<li><input type='radio' name='q22' id='q22' value='c'> 07/04/20</li>
-<li><input type='radio' name='q22' id='q22' value='d'> 04/07/20
-</li></ol>
+<p class="area">Python Language and Syntax</p>
+<p>What does pickle do?<br />
+<ol type="a">
+<li><input type='radio' name='q22' id='q22' value='a'> serialization, meaning saving a program's state data to disk so that it can carry on where it left off when restarted (persistence); and send data over TCP, and convert arbitrary python objects to string</li>
+<li><input type='radio' name='q22' id='q22' value='b'> serialization, meaning saving a program's source code to disk so that it can carry on where it left off when restarted (persistence); and send data over TCP, and convert arbitrary python objects to string</li>
+<li><input type='radio' name='q22' id='q22' value='c'> objectification, meaning converting a program's functions to objects so that they can be shared in a library (encapsulation)</li>
+<li><input type='radio' name='q22' id='q22' value='d'> objectification, meaning converting a program's functions to objects so that they can be saved to disk and shared</li>
+</ol>
 </p></div>

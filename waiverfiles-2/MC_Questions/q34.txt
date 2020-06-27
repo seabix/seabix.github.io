@@ -1,1 +1,17 @@
-Write a function (named <code>count_letters</code>) that takes a string as an argument, counts each letter in that string and returns the letter with the highest count.
+<div class="tab">
+<p class="area">Data Analysis</p><p>
+What datetime syntax would you use for converting this string to a date:<br />
+<code>
+'01/15/1997'
+</code> <br>
+<ol type="a">
+<li><input type='radio' name='q34' id='q34' value='a'> %M/%d/%y</li>
+<li><input type='radio' name='q34' id='q34' value='b'> %m/%d/%y</li>
+<li><input type='radio' name='q34' id='q34' value='c'> %m/%d/%Y</li>
+<li><input type='radio' name='q34' id='q34' value='d'> a and b</li>
+<li><input type='radio' name='q34' id='q34' value='e'> b and c</li>
+<li><input type='radio' name='q34' id='q34' value='f'> a and c</li>
+<li><input type='radio' name='q34' id='q34' value='g'> All of the above</li>
+<li><input type='radio' name='q34' id='q34' value='h'> None of the above</li>
+</ol></p>
+</div>

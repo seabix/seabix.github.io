@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>waiver.</title>
+  <title>W200 Waiver Exam.</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="finalcss.css">
+ <!-- <script type = "text/javascript" > history.pushState(null, null, location.href); history.back(); history.forward(); window.onpopstate = function () { history.go(1); }; </script>​
+ -->
 </head>
 <body>
 <img width="200wv" src="images/berkeleyischool-logo.svg" /><br />

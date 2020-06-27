@@ -1,11 +1,14 @@
 <div class="tab">
 <p class="area">Python Language and Syntax</p><p>
-Which of the following is required to access your or others&rsquo; <u>package</u>?
+What <u>keyword</u> is used to create a function in Python?
 <ol type="a">
-<li><input type='radio' name='q25' id='q25' value='a'> <code>import</code></li>
-<li><input type='radio' name='q25' id='q25' value='b'> <code>use</code></li>
-<li><input type='radio' name='q25' id='q25' value='c'> <code>__init.py__</code></li>
-<li><input type='radio' name='q25' id='q25' value='d'> <code>__main__</code></li>
-<li><input type='radio' name='q25' id='q25' value='e'> <code>__import__</code>
+<li><input type='radio' name='q25' id='q25' value='a'> <code>def</code></li>
+<li><input type='radio' name='q25' id='q25' value='b'> <code>function</code></li>
+<li><input type='radio' name='q25' id='q25' value='c'> <code>lambda</code></li>
+<li><input type='radio' name='q25' id='q25' value='d'> a and b</li>
+<li><input type='radio' name='q25' id='q25' value='e'> b and c</li>
+<li><input type='radio' name='q25' id='q25' value='f'> a and c</li>
+<li><input type='radio' name='q25' id='q25' value='g'> All of the above</li>
+<li><input type='radio' name='q25' id='q25' value='h'> None of the above</li>
 </li></ol>
 </p></div>

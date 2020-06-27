@@ -1,0 +1,46 @@
+<style>
+#countDown { 
+	width: 35px;
+	height: auto;
+	background-color: #fdecc1;
+	color: #003362;
+	text-align: center;
+	padding: 3px;
+	font-size: 9px;
+	border-radius: 3px;
+}</style>
+
+<span id='countDown'></span>
+
+
+
+<script>
+	function submitTest() {
+		document.myForm.submit();
+		window.open(_self);
+	}
+	var recordAttempt = false;
+	var runningCount = 0; 		/* Student # of seconds to complete */
+	// Set the date we're counting down to
+	var countDownDate = new Date().getTime() + (1000 * 60);
+
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	var now = new Date().getTime();
+	var distance = countDownDate - now;
+	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+	if (seconds > 11) {
+		document.getElementById("countDown").innerHTML = "&#9202; " + seconds;
+	}
+	if (seconds < 11) { 
+  		document.getElementById("countDown").style.backgroundColor = "hsl(14, 100%, 53%)";
+  		document.getElementById("countDown").innerHTML = "&#x23F0; " + seconds;
+	}  
+	if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("countDown").innerHTML = "Expired";
+    	document.myForm.submit();  /* works but causes pop-up window error & new wind */
+    	// submitTest();
+  	}
+	}, 1000);
+</script>

@@ -1,1 +1,20 @@
-Write a function (named <code>bisect</code>) that takes a <code>float</code> as an argument, uses the bisectional algorithm to come up with the square root of the number and returns that square root.
+<div class="tab">
+<p class="area">Algorithm Analysis</p><p>
+What is the Big(O) time of this code:<br />
+<br/>
+<code>def func(i):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if i<1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func(i-1) + func(i-1) <br>
+print(func(N))
+</code> <br>
+<ol type="a">
+<li><input type='radio' name='q35' id='q35' value='a'> O(1)</li>
+<li><input type='radio' name='q35' id='q35' value='b'> O(N)</li>
+<li><input type='radio' name='q35' id='q35' value='c'> O(N^2)</li>
+<li><input type='radio' name='q35' id='q35' value='d'> O(log n)</li>
+<li><input type='radio' name='q35' id='q35' value='e'> O(n log n)</li>
+<li><input type='radio' name='q35' id='q35' value='f'> O(2^N)</li>
+</ol></p>
+</div>

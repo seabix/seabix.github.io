@@ -1,10 +1,14 @@
 <div class="tab">
 <p class="area">Data Analysis</p><p>
-What library should be imported for dealing with dates and time? (choose best of the options):
+What import statement(s) should be used when dealing with dates and time?
 <ol type="a">
 <li><input type='radio' name='q21' id='q21' value='a'> from datetime import datetime, date, time</li>
-<li><input type='radio' name='q21' id='q21' value='b'> import stringdates</li>
+<li><input type='radio' name='q21' id='q21' value='b'> import datetime</li>
 <li><input type='radio' name='q21' id='q21' value='c'> import datetime from date</li>
-<li><input type='radio' name='q21' id='q21' value='d'> import dateString as date
+<li><input type='radio' name='q21' id='q21' value='d'> a and b</li>
+<li><input type='radio' name='q21' id='q21' value='e'> b and c</li>
+<li><input type='radio' name='q21' id='q21' value='f'> a and c</li>
+<li><input type='radio' name='q21' id='q21' value='g'> All of the above</li>
+<li><input type='radio' name='q21' id='q21' value='h'> None of the above</li>
 </li></ol>
 </p></div>

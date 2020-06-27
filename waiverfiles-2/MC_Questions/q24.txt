@@ -1,19 +1,14 @@
 <div class="tab">
 <p class="area">Python Language and Syntax</p><p>
-In this example, we have data already stored in a variable called <code>data</code>. 
-What does the rest of the code do?
-<br /><br />
-<code>
-countries = sorted([e["Country"] for e in data])<br />
-with open("question_1.csv", "w") as f:<br />
-&nbsp;&nbsp;&nbsp;&nbsp;writer = csv.writer(f, lineterminator="\n")<br />
-&nbsp;&nbsp;&nbsp;&nbsp;writer.writerows(countries)<br />
-</code>
+Which of the following is required to access your or others' <u>package</u>?
 <ol type="a">
-<li><input type='radio' name='q24' id='q24' value='a'> Writes the country names to a file in alphabetical order</li>
-<li><input type='radio' name='q24' id='q24' value='b'> Creates a file named countries</li>
-<li><input type='radio' name='q24' id='q24' value='c'> Reads in a file named question_1.csv</li>
-<li><input type='radio' name='q24' id='q24' value='d'> Prints a list of the sorted countries</li>
-<li><input type='radio' name='q24' id='q24' value='e'> Writes the contents of the variable f to the file</li>
-</ol>
+<li><input type='radio' name='q24' id='q24' value='a'> <code>import</code></li>
+<li><input type='radio' name='q24' id='q24' value='b'> <code> __main__</code></li>
+<li><input type='radio' name='q24' id='q24' value='c'> <code>__init.py__</code></li>
+<li><input type='radio' name='q24' id='q24' value='d'> a and b</li>
+<li><input type='radio' name='q24' id='q24' value='e'> b and c</li>
+<li><input type='radio' name='q24' id='q24' value='f'> a and c</li>
+<li><input type='radio' name='q24' id='q24' value='g'> All of the above</li>
+<li><input type='radio' name='q24' id='q24' value='h'> None of the above</li>
+</li></ol>
 </p></div>

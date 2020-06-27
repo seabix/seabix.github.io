@@ -1,14 +1,15 @@
 <div class="tab">
 <p class="area">Python Language and Syntax</p><p>
 What does this code sample do? <br /><br />
-<code>import json<br />
+<code>
+import json<br />
 with open("twitter.json") as f:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;tweet = json.load(f)
 </code>
 <ol type="a">
 <li><input type='radio' name='q20' id='q20' value='a'> creates a dictionary called f</li>
-<li><input type='radio' name='q20' id='q20' value='b'> prints a dictionary called tweet</li>
-<li><input type='radio' name='q20' id='q20' value='c'> loads data from f into a variable called tweet</li>
-<li><input type='radio' name='q20' id='q20' value='d'> convert the data from a .json file to a .csv file</li>
-<li><input type='radio' name='q20' id='q20' value='e'> nothing, because the tweet library has not been imported</li></ol>
+<li><input type='radio' name='q20' id='q20' value='b'> creates a file called tweet</li>
+<li><input type='radio' name='q20' id='q20' value='c'> loads data from twitter.json into a variable called tweet</li>
+<li><input type='radio' name='q20' id='q20' value='d'> converts the data from a .json file</li>
+<li><input type='radio' name='q20' id='q20' value='e'> nothing because the tweet library has not been imported</li></ol>
 </p></div>

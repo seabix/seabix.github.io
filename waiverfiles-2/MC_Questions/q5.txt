@@ -4,9 +4,9 @@ Python Language and Syntax</p><p>
 What is a valid way to write an if statement to check an integer <code>num</code> is 
 between 0 and 5:
 <ol type="a">
-<li><input type='radio' name='q5' id='q5' value='a'> <code>if (0 <= num) * (num <= 5)</code></li>
-<li><input type='radio' name='q5' id='q5' value='b'> <code>if num > 0 and < 5</code></li>
-<li><input type='radio' name='q5' id='q5' value='c'> <code>if num >= 0 and num <= 5</code></li>
+<li><input type='radio' name='q5' id='q5' value='a'> <code>if (0 <= num) * (num <= 5):</code></li>
+<li><input type='radio' name='q5' id='q5' value='b'> <code>if num >= 0 and <= 5:</code></li>
+<li><input type='radio' name='q5' id='q5' value='c'> <code>if num >= 0 and num <= 5:</code></li>
 <li><input type='radio' name='q5' id='q5' value='d'> a and b</li>
 <li><input type='radio' name='q5' id='q5' value='e'> b and c</li>
 <li><input type='radio' name='q5' id='q5' value='f'> a and c</li>

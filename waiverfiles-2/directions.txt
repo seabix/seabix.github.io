@@ -1,0 +1,39 @@
+<!-- start of directions.txt -->
+<strong>Overall instructions</strong>
+<ul>
+<li>Students can attempt the assessment once per term. Scores are stored 
+and emailed to you and to the Student Affairs Office.</li>
+<li>Once you start the assessment, you must progress forward - answers cannot be revised. 
+Do not attempt to revisit a question (using the back or history button) or your waiver 
+exam is void.</li>
+<li>Once you start, you&rsquo;re committed to finishing the waiver exam in one session. 
+The waiver test takes approximately 4-5 hours.</li>
+</ul>
+
+<p>There are two sections in this examination:</p>
+<ol>
+<li>Part 1 poses multiple choice questions reflecting broad content areas covered 
+in the course:
+	<ul>
+		<li>Multiple choices questions have a time limit of 60 seconds. After 60 
+		seconds have expired, the test will automatically advance to the next question; 
+		please make sure to mark an answer!</li>
+	</ul>
+</li>
+<li>Part 2 is Python coding. Here you&rsquo;ll enter code in a web form text, 
+	submit it for testing, and then advance to the next question
+	<ul>
+	<li>The short-coding questions are entered directly into the assessment site. 
+		Be sure to use <u>spaces</u> and <u>not tabs</u>.
+	</li>
+	<li>The coding questions are not timed.</li>
+	<li>The coding questions require you to work on your own computer and then enter 
+		your answers exactly as requested in the question.</li>
+	<li>The OOP question is expected to take some time.</li>
+	</ul>
+</li>
+</ol>
+<hr />
+<h4>Please read the questions carefully. Good luck!</h4>
+</div> 
+<!-- end of directions.txt -->
